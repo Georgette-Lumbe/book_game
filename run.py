@@ -65,8 +65,10 @@ def adventure_book(player_name, child_name):
     Description of situation
     """
     print('Yay!! You have chosen the Adventure Book\n')
+    time.sleep(1)
+    print("Let's bring some adventure into this presentation")
     time.sleep(2)
-    print(f'There are 2 choices for adventure books {player_name}')
+    print(f'There are 2 choices for Adventure Books {player_name}')
     time.sleep(2)
     print('Choice 1: The Shadow of Glass\n')
     time.sleep(1)
@@ -102,9 +104,11 @@ def romantic_book(player_name, child_name):
     """
     Description of situation
     """
-    print('Perfect!! You have chosen the romantic Book\n')
+    print('Perfect!! You have chosen the Romantic Book\n')
+    time.sleep(1)
+    print("Let's bring some love into this presentation")
     time.sleep(2)
-    print(f'There are 2 choices for romantic books {player_name}\n')
+    print(f'There are 2 choices for Romantic Books {player_name}\n')
     time.sleep(2)
     print('Choice 1: Mama, Do you love me?\n')
     time.sleep(1)
@@ -129,7 +133,48 @@ def romantic_book(player_name, child_name):
               "it is not suitable for children\n")
         game_over(f"{player_name}, you should make another choice "
                   "so that {child_name} can make the best presentation to "
-                  "everyone\n")      
+                  "everyone\n")  
+    else:
+        game_over('Invalid Choice')
+
+# Comedy book function
+
+
+def comedy_book(player_name, child_name):
+    """
+    Description of situation
+    """
+    print('HA HA!! You have chosen the Comedy Book\n')
+    time.sleep(1)
+    print("Let's bring some fun into this presentation")
+    time.sleep(2)
+    print(f'There are 2 choices for Comedy Books {player_name}')
+    time.sleep(2)
+    print('Choice 1: Double Trouble\n')
+    time.sleep(1)
+    print('or\n')
+    time.sleep(1)
+    print('Choice 2: Coco Banjo\n')
+    time.sleep(1.5)
+    print(f'What would you choose {player_name}? (1 or 2)')
+    time.sleep(2)
+
+    # Take the choice
+    choice = int(input())
+
+    if choice == 1:
+        # Bad Choice
+        print("Bad choice!!!")
+        print(f"{child_name} cannot make a presentation on this book, "
+              "it is absolutely not suitable\n")
+        game_over(f"{player_name}, you should make another choice "
+                  "so that {child_name} can make the best presentation to "
+                  "everyone\n")
+    elif choice == 2:
+        # Good Choice
+        print(f"Good choice {player_name}!!!")
+        print(f"{child_name} will make everyone laugh with this book"
+              "This is the perfect comedy book for a presentation")
     else:
         game_over('Invalid Choice')
 
