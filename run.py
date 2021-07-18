@@ -17,12 +17,12 @@ def welcome():
     time.sleep(1)
     start_game(player_name)
 
-# Function to start the game and set the scenario
+# Function to start the game
 
 
 def start_game(player_name):
     """
-    start game, set scenario and get child name
+    start game, set scenario, get child name and type of books
     """
     print("Your child has to give a presentation on an interesting book "
           "in front of parents, teachers and the whole class.\n")
@@ -39,18 +39,23 @@ def start_game(player_name):
     print(f"{player_name}, there are 4 types of books.\n")
     print('Which type of book will you choose? (a, r, c or h)')
 
+    # Take the type of books
+    choice = input().lower()
+    if 'a' in choice:
+        # if the player typed a, he will redirect to adventure_book()
+        adventure_book(player_name, child_name)
+    elif 'r' in choice:
+        # if the player typed r, he will redirect to romantic_book()
+        romantic_book(player_name, child_name)
+    elif 'c' in choice:
+        # if the player typed c, he will redirect to comedy_book()
+        comedy_book(player_name, child_name)
+    elif 'h' in choice:
+        # if the player typed h, he will redirect to history_book()
+        history_book(player_name, child_name)
+    else:
+        # else call game_over() function
+        game_over('Invalid choice')
+
 
 welcome()
-
-
-# Fisrt option
-
-# Second option
-
-# Third option
-
-# Fourth option
-
-# End game
-
-# Play game
