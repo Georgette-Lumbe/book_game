@@ -57,5 +57,43 @@ def start_game(player_name):
         # else call game_over() function
         game_over('Invalid choice')
 
+# Adventure book function
+
+
+def adventure_book(player_name, child_name):
+    """
+    Description of situation
+    """
+    print('Yay!! You have chosen the Adventure Book\n')
+    time.sleep(2)
+    print(f'There are 2 choices for adventure books {player_name}')
+    time.sleep(2)
+    print('Choice 1: The Shadow of Glass\n')
+    time.sleep(1)
+    print('or\n')
+    time.sleep(1)
+    print('Choice 2: The Ship of Shadow\n')
+    time.sleep(1.5)
+    print(f'What would you choose {player_name}? (1 or 2)')
+    time.sleep(2)
+
+    # Take the choice
+    choice = int(input())
+
+    if choice == 1:
+        # Bad Choice
+        print("Bad choice!!!")
+        print(f"{child_name} cannot make a presentation on this book, "
+              "it might scare the other children\n")
+        game_over(f"{player_name}, you should make another choice "
+                  "so that {child_name} can make the best presentation to "
+                  "everyone\n")
+    elif choice == 2:
+        # Good Choice
+        print(f"Good choice {player_name}!!!")
+        print("This adventure book is perfect for a presentation")
+    else:
+        game_over('Invalid Choice')
+
 
 welcome()
