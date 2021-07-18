@@ -95,5 +95,43 @@ def adventure_book(player_name, child_name):
     else:
         game_over('Invalid Choice')
 
+# Romantic book function
+
+
+def romantic_book(player_name, child_name):
+    """
+    Description of situation
+    """
+    print('Perfect!! You have chosen the romantic Book\n')
+    time.sleep(2)
+    print(f'There are 2 choices for romantic books {player_name}\n')
+    time.sleep(2)
+    print('Choice 1: Mama, Do you love me?\n')
+    time.sleep(1)
+    print('or\n')
+    time.sleep(1)
+    print('Choice 2: Fifty Shades of Grey\n')
+    time.sleep(1.5)
+    print(f'What would you choose {player_name}? (1 or 2)')
+    time.sleep(2)
+
+    # Take the choice
+    choice = int(input())
+
+    if choice == 1:
+        # Good Choice
+        print(f"Good choice {player_name}!!!")
+        print("This romantic book is THE BOOK")
+    elif choice == 2:
+        # Bad Choice
+        print("Bad choice!!!")
+        print(f"{child_name} cannot make a presentation on this book, "
+              "it is not suitable for children\n")
+        game_over(f"{player_name}, you should make another choice "
+                  "so that {child_name} can make the best presentation to "
+                  "everyone\n")      
+    else:
+        game_over('Invalid Choice')
+
 
 welcome()
