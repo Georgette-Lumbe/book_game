@@ -13,7 +13,24 @@ def welcome():
 
     player_name = input('What is your name?\n').capitalize()
     time.sleep(2)
-    print(f"Welcome to the BOOK CHOICE GAME {player_name}")
+    print(colored("    __________________   __________________", 'cyan'))
+    print(colored(".-/|                  \ /                  |\-.", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||                   |       ~~*~~       ||||", 'cyan'))
+    print(colored("||||    --==*==--      |                   ||||", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||     BOOK          |      GAME         ||||", 'cyan'))
+    print(colored("||||                   |     --==*==--     ||||", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||                   |                   ||||", 'cyan'))
+    print(colored("||||__________________ | __________________||||", 'cyan'))
+    print(colored("||/===================\|/===================\||", 'cyan'))
+    print(colored("`--------------------~___~-------------------''", 'cyan'))
+    art = figlet_format(f"Welcome {player_name}")
+    colored_art = colored(art, 'cyan')
+    print(colored_art)
     time.sleep(2)
     print("Happy to have you here. So, let's start the game\n")
     time.sleep(1)
@@ -101,8 +118,8 @@ def adventure_book(player_name, child_name):
         time.sleep(1)
         choice = input()
         if 'yes' in choice:
-            print("This book is about Aleja who is a dreamer who longs for a" 
-                  " life of magic and adventure. So when a mysterious ship "
+            print("This book is about Aleja who is a dreamer who longs for " 
+                  "a life of magic and adventure. So when a mysterious ship "
                   "arrives in her Spanish harbour city, crewed by a band of "
                   "ruthless women, Aleja knows it's sailed right out of a "
                   "legend. ... But life aboard the Ship of Shadows is more  "
