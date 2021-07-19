@@ -215,8 +215,32 @@ def comedy_book(player_name, child_name):
         time.sleep(1)
         print(f"{child_name} will make everyone laugh with this book"
               "This is the perfect comedy book for a presentation")
+        time.sleep(1)
+        print('Do you need a summary of this book? (yes or no)\n')
+        time.sleep(1)
+        choice = input()
+        if 'yes' in choice:
+            print("Coco Banjo to the rescue! Coco Banjo loves her life. " 
+                  "She sleeps in a tiger onesie, wears her mum's diamonds "
+                  "just because she can, and has dolphins and penguins for "
+                  "friends.")
+            time.sleep(0.5)
+            print("Today Coco's planning a Yay Day of fun on her secret "
+                  "island home in the middle of Sydney Harbour. But "
+                  "wait . . . what's that Secret Signal? Oh no, Narianna "
+                  "(known as N) is being bullied!")
+            time.sleep(1)
+            print("Coco sets off for school to rescue her. But when cranky "
+                  "school principal Miss Trample sees Coco's school uniform "
+                  "(customised, thank you very much), Coco might be in even "
+                  "more trouble than her best friend.")
+            time.sleep(1)
+            print("How will she get out of this one?")
+        elif 'no' in choice:
+            print("It's perfect, you can find out for yourself by reading it")
+        else:
+            print('OOPS, Invalid choice')
         time.sleep(2)
-
         make_another_choice(player_name, child_name)
 
     else:
