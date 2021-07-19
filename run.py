@@ -11,7 +11,7 @@ def welcome():
 
     player_name = input('What is your name?\n').capitalize()
     time.sleep(2)
-    print(f"Welcome to the children's reading camp {player_name}")
+    print(f"Welcome to BOOK CHOICE GAME {player_name}")
     time.sleep(2)
     print("Happy to have you here. So, let's start the game\n")
     time.sleep(1)
@@ -213,8 +213,8 @@ def comedy_book(player_name, child_name):
         # Good Choice
         print(f"Good choice {player_name}!!!")
         time.sleep(1)
-        print(f"{child_name} will make everyone laugh with this book"
-              "This is the perfect comedy book for a presentation")
+        print(f"{child_name} will make everyone laugh with this book. "
+              "This is the perfect comedy book for a presentation\n")
         time.sleep(1)
         print('Do you need a summary of this book? (yes or no)\n')
         time.sleep(1)
@@ -224,17 +224,17 @@ def comedy_book(player_name, child_name):
                   "She sleeps in a tiger onesie, wears her mum's diamonds "
                   "just because she can, and has dolphins and penguins for "
                   "friends.")
-            time.sleep(0.5)
+            time.sleep(1.5)
             print("Today Coco's planning a Yay Day of fun on her secret "
                   "island home in the middle of Sydney Harbour. But "
                   "wait . . . what's that Secret Signal? Oh no, Narianna "
                   "(known as N) is being bullied!")
-            time.sleep(1)
+            time.sleep(1.5)
             print("Coco sets off for school to rescue her. But when cranky "
                   "school principal Miss Trample sees Coco's school uniform "
                   "(customised, thank you very much), Coco might be in even "
                   "more trouble than her best friend.")
-            time.sleep(1)
+            time.sleep(1.5)
             print("How will she get out of this one?")
         elif 'no' in choice:
             print("It's perfect, you can find out for yourself by reading it")
@@ -260,7 +260,7 @@ def history_book(player_name, child_name):
     time.sleep(2)
     print(f'There are 2 choices for History Book {player_name}\n')
     time.sleep(2)
-    print('Choice 1: Little Leaders?\n')
+    print('Choice 1: Who was Anne Franck?\n')
     time.sleep(1)
     print('or\n')
     time.sleep(1)
@@ -274,11 +274,26 @@ def history_book(player_name, child_name):
 
     if choice == 1:
         # Good Choice
-        print(f"Good choice {player_name}!!!\n")
+        print(f"Good choice {player_name}!!!")
         time.sleep(1)
         print("Every child should have this book\n")
-        time.sleep(2)
+        time.sleep(1)
+        print('Do you need a summary of this book? (yes or no)\n')
+        time.sleep(1)
+        choice = input()
+        if 'yes' in choice:
+            print("Anne Frank was a teenage Jewish girl who kept a diary "
+                  "while her family was in hiding from the Nazis during "
+                  "World War II. For two years, she and seven others "
+                  "lived in a 'Secret Annex' lived in a 'Secret Annex'")
+            time.sleep(1)
+            print("Anne died in the Bergen-Belsen camp in 1945.")
+        elif 'no' in choice:
+            print("It's perfect, you can find out for yourself by reading it")
+        else:
+            print('OOPS, Invalid choice')
 
+        time.sleep(2)
         make_another_choice(player_name, child_name)
 
     elif choice == 2:
