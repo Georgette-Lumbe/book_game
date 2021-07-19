@@ -54,7 +54,9 @@ def start_game(player_name):
         # if the player typed h, he will redirect to history_book()
         history_book(player_name, child_name)
     else:
-        print('Invalid choice')
+        print('OOPS, Invalid')
+        print(f'Please {player_name}, make another choice\n')
+        start_game(player_name)
 
 # Adventure book function
 
@@ -97,7 +99,10 @@ def adventure_book(player_name, child_name):
         make_another_choice(player_name, child_name)
 
     else:
-        print('Invalid Choice')
+        print('OOPS, Invalid\n')
+        print(f'Please {player_name}, make another choice\n')
+        adventure_book(player_name, child_name)
+        time.sleep(2)
 
 # Romantic book function
 
@@ -138,9 +143,13 @@ def romantic_book(player_name, child_name):
         print("Bad choice!!!")
         print(f"{child_name} cannot make a presentation on this book, "
               "it is not suitable for children\n")
+        time.sleep(2)
         game_over(player_name, child_name)  
     else:
-        print('Invalid Choice')
+        print('OOPS, Invalid\n')
+        print(f'Please {player_name}, make another choice\n')
+        romantic_book(player_name, child_name)
+        time.sleep(2)
 
 # Comedy book function
 
@@ -184,7 +193,10 @@ def comedy_book(player_name, child_name):
         make_another_choice(player_name, child_name)
 
     else:
-        print('Invalid Choice')
+        print('OOPS, Invalid\n')
+        print(f'Please {player_name}, make another choice\n')
+        comedy_book(player_name, child_name)
+        time.sleep(2)
 
 # History book function
 
@@ -227,7 +239,10 @@ def history_book(player_name, child_name):
         time.sleep(2)
         game_over(player_name, child_name)
     else:
-        print('Invalid Choice')
+        print('OOPS, Invalid\n')
+        print(f'Please {player_name}, make another choice\n')
+        history_book(player_name, child_name)
+        time.sleep(2)
 
 # Function to play again
 
@@ -254,7 +269,11 @@ def make_another_choice(player_name, child_name):
         print('CLICK THE GREEN BUTTON\n')
         print('     ')
     else:
-        print('Invalid choice')
+        print('OOPS, Invalid')
+        print(f'Please {player_name}, make another choice\n')
+        time.sleep(2)
+
+    make_another_choice(player_name, child_name)
 
 # game_over function
 
@@ -263,7 +282,7 @@ def game_over(player_name, child_name):
     print('GAME OVER')
     time.sleep(1)
     print(f"{player_name}, you should make another choice "
-          "so that {child_name} can make the best presentation to "
+          f"so that {child_name} can make the best presentation to "
           "everyone\n")
     time.sleep(2)
 
