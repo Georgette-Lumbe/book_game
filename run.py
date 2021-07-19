@@ -75,7 +75,7 @@ def adventure_book(player_name, child_name):
     time.sleep(1)
     print('or\n')
     time.sleep(1)
-    print('Choice 2: The Ship of Shadow\n')
+    print('Choice 2: The Ship of Shadows\n')
     time.sleep(1.5)
     print(f'What would you choose {player_name}? (1 or 2)\n')
     time.sleep(2)
@@ -94,8 +94,24 @@ def adventure_book(player_name, child_name):
         print(f"Good choice {player_name}!!!\n")
         time.sleep(1)
         print("This adventure book is perfect for a presentation\n")
-        time.sleep(2)
+        time.sleep(1)
+        print('Do you want to know more about this book? (yes or no)\n')
+        time.sleep(1)
 
+        choice = input()
+        if 'yes' in choice:
+            print("This book is about Aleja who is a dreamer who longs for a" 
+                  " life of magic and adventure. So when a mysterious ship "
+                  "arrives in her Spanish harbour city, crewed by a band of "
+                  "ruthless women, Aleja knows it's sailed right out of a "
+                  "legend. ... But life aboard the Ship of Shadows is more  "
+                  "than even she bargained for.")
+        elif 'no' in choice:
+            print("It's perfect, you can find out for yourself by reading it")
+        else:
+            print('OOPS, Invalid choice')
+
+        time.sleep(1.5)
         make_another_choice(player_name, child_name)
 
     else:
@@ -272,8 +288,7 @@ def make_another_choice(player_name, child_name):
         print('OOPS, Invalid')
         print(f'Please {player_name}, make another choice\n')
         time.sleep(2)
-
-    make_another_choice(player_name, child_name)
+        make_another_choice(player_name, child_name)
 
 # game_over function
 
