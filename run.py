@@ -97,7 +97,6 @@ def adventure_book(player_name, child_name):
         time.sleep(1)
         print('Do you want to know more about this book? (yes or no)\n')
         time.sleep(1)
-
         choice = input()
         if 'yes' in choice:
             print("This book is about Aleja who is a dreamer who longs for a" 
@@ -149,9 +148,21 @@ def romantic_book(player_name, child_name):
         # Good Choice
         print(f"Good choice {player_name}!!!")
         time.sleep(1)
-        print("This romantic book is THE BOOK")
-        time.sleep(2)
+        print("This romantic book is THE BOOK\n")
+        time.sleep(1)
+        print('Do you need a summary of this book? (yes or no)\n')
+        time.sleep(1)
+        choice = input()
+        if 'yes' in choice:
+            print('Mama, Do you love me? is a Charming tale of affection, '
+                  'adventure, and wonder in which a young Inuit girl disobeys '
+                  'wanders away from home and learns valuable lessons..')
+        elif 'no' in choice:
+            print("It's perfect, you can find out for yourself by reading it")
+        else:
+            print('OOPS, Invalid choice')
 
+        time.sleep(1.5)
         make_another_choice(player_name, child_name)
 
     elif choice == 2:
