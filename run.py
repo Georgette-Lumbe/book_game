@@ -1,5 +1,7 @@
-# Import
+# Importing the modules
 import time
+from pyfiglet import figlet_format
+from termcolor import colored
 
 
 def welcome():
@@ -11,7 +13,7 @@ def welcome():
 
     player_name = input('What is your name?\n').capitalize()
     time.sleep(2)
-    print(f"Welcome to BOOK CHOICE GAME {player_name}")
+    print(f"Welcome to the BOOK CHOICE GAME {player_name}")
     time.sleep(2)
     print("Happy to have you here. So, let's start the game\n")
     time.sleep(1)
