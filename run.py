@@ -30,7 +30,7 @@ def welcome():
     print(colored("`--------------------~___~-------------------''", 'cyan'))
     time.sleep(1.5)
     welcome_art = figlet_format(f"Welcome {player_name}")
-    colored_art = colored(welcome_art, 'cyan')
+    colored_art = colored(welcome_art, 'cyan', attrs=['bold'])
     print(colored_art)
     time.sleep(2)
     print("Happy to have you here. So, let's start the game\n")
@@ -57,8 +57,11 @@ def start_game(player_name):
           "make the right choice!\n")
     time.sleep(2)
     print(f"{player_name}, there are 4 types of books.\n")
-    print('Which type of book will you choose? (a, r, c or h)')
-
+    print(("  "), (colored("ADVENTURE", "green", attrs=["reverse", "bold"])),
+                  (colored("ROMANTIC", "red", attrs=["reverse", "bold"])),
+                  (colored("COMEDY", "yellow", attrs=["reverse", "bold"])),
+                  (colored("HISTORY", "cyan", attrs=["reverse", "bold"])))
+    print('\nWhich type of book will you choose? (a, r, c or h)\n')
     # Take the type of books
     choice = input().lower()
     if 'a' in choice:
@@ -362,7 +365,7 @@ def make_another_choice(player_name, child_name):
 
 def game_over(player_name, child_name):
     game_over_art = figlet_format("BAD CHOICE")
-    colored_ascii = colored(game_over_art, 'red')
+    colored_ascii = colored(game_over_art, 'red', attrs=['bold'])
     print(colored_ascii)
     time.sleep(1)
     print("You should make another choice "
