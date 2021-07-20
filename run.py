@@ -13,22 +13,6 @@ def welcome():
 
     player_name = input('What is your name?\n').capitalize()
     time.sleep(2)
-    print(colored("    __________________   __________________", 'cyan'))
-    print(colored(".-/|                  \ /                  |\-.", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||                   |       ~~*~~       ||||", 'cyan'))
-    print(colored("||||    --==*==--      |                   ||||", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||     BOOK          |      GAME         ||||", 'cyan'))
-    print(colored("||||                   |     --==*==--     ||||", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||                   |                   ||||", 'cyan'))
-    print(colored("||||__________________ | __________________||||", 'cyan'))
-    print(colored("||/===================\|/===================\||", 'cyan'))
-    print(colored("`--------------------~___~-------------------''", 'cyan'))
-    time.sleep(1.5)
     welcome_art = figlet_format(f"Welcome {player_name}", font='slant')
     colored_art = colored(welcome_art, 'cyan', attrs=['bold'])
     print(colored_art)
@@ -104,8 +88,7 @@ def adventure_book(player_name, child_name):
     print(colored(f'What would you choose {player_name}? (1 or 2)\n'
           'cyan', attrs=['bold']))
     time.sleep(2)
-
-    # Take the choice
+    # Take a choice
     choice = int(input())
 
     if choice == 1:
