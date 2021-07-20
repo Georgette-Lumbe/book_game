@@ -1,7 +1,19 @@
-# Importing the modules
+# Import the modules
 import time
 from pyfiglet import figlet_format
 from termcolor import colored
+
+
+while True:
+    # BOOK GAME OPENS IN 15s
+    opening_time = 15
+    while opening_time > 0:
+        m, s = divmod(opening_time, 15)
+        time_left = str(m).zfill(2) + ':' + str(s).zfill(2)
+        print(time_left + '\r', end='')
+        time.sleep(1)
+        opening_time -= 1
+    break
 
 
 def welcome():
