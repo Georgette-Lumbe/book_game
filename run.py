@@ -28,8 +28,9 @@ def welcome():
     print(colored("||||__________________ | __________________||||", 'cyan'))
     print(colored("||/===================\|/===================\||", 'cyan'))
     print(colored("`--------------------~___~-------------------''", 'cyan'))
-    art = figlet_format(f"Welcome {player_name}")
-    colored_art = colored(art, 'cyan')
+    time.sleep(1.5)
+    welcome_art = figlet_format(f"Welcome {player_name}")
+    colored_art = colored(welcome_art, 'cyan')
     print(colored_art)
     time.sleep(2)
     print("Happy to have you here. So, let's start the game\n")
@@ -104,10 +105,8 @@ def adventure_book(player_name, child_name):
 
     if choice == 1:
         # Bad Choice
-        print("Bad choice!!!")
-        print(f"{child_name} cannot make a presentation on this book, "
-              "it might scare the other children")
-        game_over(player_name, child_name)
+        time.sleep(2)
+        game_over(player_name, child_name)   
     elif choice == 2:
         # Good Choice
         print(f"Good choice {player_name}!!!\n")
@@ -186,11 +185,8 @@ def romantic_book(player_name, child_name):
 
     elif choice == 2:
         # Bad Choice
-        print("Bad choice!!!")
-        print(f"{child_name} cannot make a presentation on this book, "
-              "it is not suitable for children\n")
         time.sleep(2)
-        game_over(player_name, child_name)  
+        game_over(player_name, child_name)
     else:
         print('OOPS, Invalid\n')
         print(f'Please {player_name}, make another choice\n')
@@ -224,9 +220,7 @@ def comedy_book(player_name, child_name):
 
     if choice == 1:
         # Bad Choice
-        print("Bad choice!!!")
-        print(f"{child_name} cannot make a presentation on this book, "
-              "it is absolutely not suitable\n")
+        time.sleep(2)
         game_over(player_name, child_name)
     elif choice == 2:
         # Good Choice
@@ -317,10 +311,6 @@ def history_book(player_name, child_name):
 
     elif choice == 2:
         # Bad Choice
-        print("Bad choice!!!\n")
-        time.sleep(1)
-        print(f"{child_name} cannot make a presentation on this book, "
-              "it is not suitable for children\n")
         time.sleep(2)
         game_over(player_name, child_name)
     else:
@@ -363,14 +353,17 @@ def make_another_choice(player_name, child_name):
 
 
 def game_over(player_name, child_name):
-    print('GAME OVER')
+    game_over_art = figlet_format("BAD CHOICE")
+    colored_ascii = colored(game_over_art, 'red')
+    print(colored_ascii)
     time.sleep(1)
-    print(f"{player_name}, you should make another choice "
+    print("You should make another choice "
           f"so that {child_name} can make the best presentation to "
-          "everyone\n")
-    time.sleep(2)
-
-    make_another_choice(player_name, child_name)
+          "everyone")
+    print(f"{child_name} cannot make a presentation on this book, "
+              "it is absolutely not suitable\n")
+    time.sleep(1.5)
+    start_game(player_name)
 
 
 welcome()
