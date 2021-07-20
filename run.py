@@ -106,18 +106,20 @@ def adventure_book(player_name, child_name):
     if choice == 1:
         # Bad Choice
         time.sleep(2)
-        game_over(player_name, child_name)   
+        game_over(player_name, child_name)
     elif choice == 2:
         # Good Choice
-        print(f"Good choice {player_name}!!!\n")
-        time.sleep(1)
+        good_choice_art = figlet_format("GOOD CHOICE")
+        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
+        print(colored_choice)
+        time.sleep(1.5)
         print("This adventure book is perfect for a presentation\n")
         time.sleep(1)
         print('Do you want to know more about this book? (yes or no)\n')
         time.sleep(1)
         choice = input()
         if 'yes' in choice:
-            print("This book is about Aleja who is a dreamer who longs for " 
+            print("This book is about Aleja who is a dreamer who longs for "
                   "a life of magic and adventure. So when a mysterious ship "
                   "arrives in her Spanish harbour city, crewed by a band of "
                   "ruthless women, Aleja knows it's sailed right out of a "
@@ -164,8 +166,10 @@ def romantic_book(player_name, child_name):
 
     if choice == 1:
         # Good Choice
-        print(f"Good choice {player_name}!!!")
-        time.sleep(1)
+        good_choice_art = figlet_format("GOOD CHOICE")
+        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
+        print(colored_choice)
+        time.sleep(1.5)
         print("This romantic book is THE BOOK\n")
         time.sleep(1)
         print('Do you need a summary of this book? (yes or no)\n')
@@ -224,8 +228,10 @@ def comedy_book(player_name, child_name):
         game_over(player_name, child_name)
     elif choice == 2:
         # Good Choice
-        print(f"Good choice {player_name}!!!")
-        time.sleep(1)
+        good_choice_art = figlet_format("GOOD CHOICE")
+        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
+        print(colored_choice)
+        time.sleep(1.5)
         print(f"{child_name} will make everyone laugh with this book. "
               "This is the perfect comedy book for a presentation\n")
         time.sleep(1)
@@ -233,7 +239,7 @@ def comedy_book(player_name, child_name):
         time.sleep(1)
         choice = input()
         if 'yes' in choice:
-            print("Coco Banjo to the rescue! Coco Banjo loves her life. " 
+            print("Coco Banjo to the rescue! Coco Banjo loves her life. "
                   "She sleeps in a tiger onesie, wears her mum's diamonds "
                   "just because she can, and has dolphins and penguins for "
                   "friends.")
@@ -287,8 +293,10 @@ def history_book(player_name, child_name):
 
     if choice == 1:
         # Good Choice
-        print(f"Good choice {player_name}!!!")
-        time.sleep(1)
+        good_choice_art = figlet_format("GOOD CHOICE")
+        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
+        print(colored_choice)
+        time.sleep(1.5)
         print("Every child should have this book\n")
         time.sleep(1)
         print('Do you need a summary of this book? (yes or no)\n')
@@ -361,7 +369,7 @@ def game_over(player_name, child_name):
           f"so that {child_name} can make the best presentation to "
           "everyone")
     print(f"{child_name} cannot make a presentation on this book, "
-              "it is absolutely not suitable\n")
+          "it is absolutely not suitable\n")
     time.sleep(1.5)
     start_game(player_name)
 
