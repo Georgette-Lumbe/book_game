@@ -13,6 +13,7 @@ def welcome():
 
     player_name = input('What is your name?\n').capitalize()
     time.sleep(2)
+    # Style the welcome message
     welcome_art = figlet_format(f"Welcome {player_name}", font='slant')
     colored_art = colored(welcome_art, 'cyan', attrs=['bold'])
     print(colored_art)
@@ -41,6 +42,7 @@ def start_game(player_name):
           "make the right choice!\n")
     time.sleep(2)
     print(f"{player_name}, there are 4 types of books.\n")
+    # Style types of books
     print(("  "), (colored("ADVENTURE", "green", attrs=["reverse", "bold"])),
                   (colored("ROMANTIC", "red", attrs=["reverse", "bold"])),
                   (colored("COMEDY", "yellow", attrs=["reverse", "bold"])),
@@ -88,15 +90,19 @@ def adventure_book(player_name, child_name):
     print(colored(f'What would you choose {player_name}? (1 or 2)\n'
           'cyan', attrs=['bold']))
     time.sleep(2)
-    # Take a choice
+    # Take the input
     choice = int(input())
-
+    """
+    Player chooses integers 1 or 2
+    Conditional statement to determine the player choice
+    """
     if choice == 1:
-        # Bad Choice
+        # Call game over function when it is Bad Choice
         time.sleep(2)
         game_over(player_name, child_name)
     elif choice == 2:
         # Good Choice
+        # Style the output
         good_choice_art = figlet_format("GOOD CHOICE", font='slant')
         colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
         print(colored_choice)
@@ -106,6 +112,9 @@ def adventure_book(player_name, child_name):
         print(colored('Do you want to know more about this book? (yes or no)\
                        n', 'cyan', attrs=['bold']))
         time.sleep(1)
+        """
+        Conditional statement to relate more about the book choosen or not
+        """
         choice = input()
         if 'yes' in choice:
             print("This book is about Aleja who is a dreamer who longs for "
@@ -133,7 +142,7 @@ def adventure_book(player_name, child_name):
 
 def romantic_book(player_name, child_name):
     """
-    Description of situation
+    Description of situation with differents choices
     """
     print('Perfect!! You have chosen the Romantic Book')
     time.sleep(1)
@@ -153,7 +162,9 @@ def romantic_book(player_name, child_name):
 
     # Take the choice
     choice = int(input())
-
+    """
+    Conditional statement for book choice
+    """
     if choice == 1:
         # Good Choice
         good_choice_art = figlet_format("GOOD CHOICE", font='slant')
@@ -165,7 +176,11 @@ def romantic_book(player_name, child_name):
         print(colored('Do you need a summary of this book? (yes or no)',
                       'cyan', attrs=['bold']))
         time.sleep(1)
+        # Take the input
         choice = input()
+        """
+        Conditional statement to relate more about the book choosen or not
+        """
         if 'yes' in choice:
             print('Mama, Do you love me? is a Charming tale of affection, '
                   'adventure, and wonder in which a young Inuit girl disobeys '
@@ -326,11 +341,14 @@ def history_book(player_name, child_name):
 
 
 def make_another_choice(player_name, child_name):
+    """
+    Give user the opportunity to make another choice
+    """
     time.sleep(3)
     print('')
     print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
                   '(yes or no)', 'cyan', attrs=['bold']))
-
+    # Take the user input
     choice = input().lower()
     if 'yes' in choice:
         # if the player choose 'yes', start the book game from beginning
@@ -345,8 +363,8 @@ def make_another_choice(player_name, child_name):
         print(f"GUESS WHAT? {child_name} will be among the best\n")
         time.sleep(1.5)
         print('IF YOU CHANGE YOUR MIND\n')
+        # Reload the game
         print('CLICK THE GREEN BUTTON\n')
-        print('     ')
     else:
         print('OOPS, Invalid')
         print(f'Please {player_name}, make another choice\n')
@@ -357,6 +375,9 @@ def make_another_choice(player_name, child_name):
 
 
 def game_over(player_name, child_name):
+    """
+    If player chose wrong choice, game_over function is called
+    """
     game_over_art = figlet_format("BAD CHOICE", font='slant')
     colored_ascii = colored(game_over_art, 'red', attrs=['bold'])
     print(colored_ascii)
@@ -367,6 +388,7 @@ def game_over(player_name, child_name):
     print(f"{child_name} cannot make a presentation on this book, "
           "it is absolutely not suitable\n")
     time.sleep(1.5)
+    # Restart the game
     start_game(player_name)
 
 
