@@ -2,16 +2,22 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="xterm.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
         integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
         crossorigin="anonymous"></script>
     <script src="xterm.js"></script>
-    <title>Python Terminal by Code Institute</title>
+    <title>Book Game</title>
 </head>
 
 <body>
-    <button onclick="window.location.reload()">Run Program</button>
+    <div class="gif">
+        <img src="https://media.giphy.com/media/h6xkIXORzXOtOS9a0t/giphy.gif" alt="blue_book" class="book" id="book">
+    </div>
+    <br>
+
+    <button onclick="window.location.reload()">Click to Run</button>
     <div id="terminal"></div>
     <script>
         var socket = null;
