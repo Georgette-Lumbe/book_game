@@ -15,7 +15,7 @@
 
 3. [Features](#features "Goto features")
 
-    - [Existing and Design Features](#existing-and-design-features "Goto existing & design features")
+    - [Existing Features](#existing-features "Goto existing features")
     - [Features to Implement in the future](#features-to-implement-in-the-future "Goto features to implement in the future")
     
 4. [Testing](#testing "Goto testing")
@@ -50,6 +50,27 @@ Book Game is an interactive game about making a good choice of children's books 
 
 This is the third of five Milestone projects that the developer is required to complete as part of their full web development course at the Code Institute. The main requirements were to create an App using mainly *Python Programming Language*.
 
+# Features
+
+## Existing Features
+
+1. Run Program Button
+
+    * At the top of the terminal, there is a green button which allows the user to run the program from the start whenever he wants
+    <img src=''>
+
+2. Terminal Area
+
+    * This section allows the user to start the program, follow the instructions and enter data.
+    <img src=''>
+
+3. Program Structure
+
+    * In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in []()
+    <img src=''>
+
+## Features to implement in the future
+
 # Deployment
 
 This project was committed to Git and push to GitHub using the workspace terminal.
@@ -70,7 +91,7 @@ To deploy this program to Heroku, the developer followed these steps:
   - Click to add builpack and add in order: Python the node.js
 7. Select Deploy from the menu at the top
 8. Go to deployment method and then click to GitHub 
-9. Connect to GitHub
+9. Connect to [GitHub]()
 10. Search and Link up our GitHub repository code to Heroku app
 11. Scroll down to manual deploy
 12. Click to Deploy branch
