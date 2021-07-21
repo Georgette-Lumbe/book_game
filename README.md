@@ -1,45 +1,47 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BOOK GAME
 
-Welcome Georgette-Lumbe,
+[View the live project here](https://book-choicegame.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+# Table of Content
 
-## Gitpod Reminders
+1. [Introduction](#introduction "Goto introduction")
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+2. [UX](#ux "Goto ux")
 
-`python3 -m http.server`
+    - [Ideal User Demographic](#ideal-user-demographic "Goto ideal user demographic")
+    - [User Stories](#user-stories "Goto user stories")
+    - [Development Planes](#development-planes "Goto development planes")
+    - [Design](#design "Goto design")
 
-A blue button should appear to click: *Make Public*,
+3. [Features](#features "Goto features")
 
-Another blue button should appear to click: *Open Browser*.
+    - [Existing and Design Features](#existing-and-design-features "Goto existing & design features")
+    - [Features to Implement in the future](#features-to-implement-in-the-future "Goto features to implement in the future")
+    
+4. [Testing](#testing "Goto testing")
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    - [Manual Testing](#)
+    - [Validator Testing](#)
 
-A blue button should appear to click: *Make Public*,
+5. [Issues and Unfixed bugs](#issues-and-unfixed-bugs "Goto issues and unfixed bugs")
 
-Another blue button should appear to click: *Open Browser*.
+6. [Technologies used](#technologies-used "Goto technologies used")
+ 
+    - [Main Languages Used](#main-languages-used "Goto main languages used")
+    - [Libraries, Frameworks and Programs Used](#libraries-frameworks-and-programs-used "Goto libraries, frameworks and programs used")
+    
+7. [Deployment](#deployment "Goto deployment")
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - [Deployment on Github Pages](#deployment-on-github-pages "Goto deployment on github pages")
+    - [Forking the Repository](#forking-the-repository "Goto forking the repository")
+    - [Creating a Clone](#creating-a-clone "Goto creating a clone")
 
-## Updates Since The Instructional Video
+8. [Credits](#credits "Goto credits")
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - [Content](#content "Goto content")
+    - [Media](#media "Goto media")
+    - [code](#code "code")
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+9. [Acknowledgements](#acknowledgements "Goto acknowledgements")
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+---
