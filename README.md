@@ -44,6 +44,12 @@
 
 ---
 
+# Introduction
+
+Book Game is an interactive game about making a good choice of children's books for a school presentation. It allows the user to input some data, follow the text-based instructions and questions displayed at the terminal. If the instructions are followed correctly, they will get their desired choice printed to the terminal. The user have to be carreful because there are also some books which are not appropriate for children.
+
+This is the third of five Milestone projects that the developer is required to complete as part of their full web development course at the Code Institute. The main requirements were to create an App using mainly *Python Programming Language*.
+
 # Deployment
 
 This project was committed to Git and push to GitHub using the workspace terminal.
