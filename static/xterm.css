@@ -195,3 +195,22 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
+/* Media queries for portrait and landscape devices*/
+@media only screen and (min-device-width:100px) and (max-device-width:4000px) and (-webkit-min-device-pixel-ratio:1) {
+
+    html,
+    body {
+        height: 50%;
+    }
+
+    html {
+        margin: auto;
+        display: table;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
