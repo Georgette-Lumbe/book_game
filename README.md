@@ -71,6 +71,21 @@ This is the third of five Milestone projects that the developer is required to c
 
 ## Features to implement in the future
 
+# Testing
+
+# Issues and Unfixed bugs
+
+# Technologies used
+
+## Main Languages Used
+
+1. [Python]()
+2. [HTML5](https://fr.wikipedia.org/wiki/HTML5)
+3. [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+### Libraries, Frameworks and Programs Used
+
+
 # Deployment
 
 This project was committed to Git and push to GitHub using the workspace terminal.
@@ -79,7 +94,7 @@ This project was committed to Git and push to GitHub using the workspace termina
 
 To deploy this program to Heroku, the developer followed these steps:
 
-1. Type Pip3 freeze > requirements.txt in the workspace terminal
+1. Create requirements.txt by typing Pip3 freeze > requirements.txt in the workspace terminal
 2. Log into [Heroku]()
 3. Create new APP 
   - Rename the APP
@@ -96,4 +111,4 @@ To deploy this program to Heroku, the developer followed these steps:
 11. Scroll down to manual deploy
 12. Click to Deploy branch
 13. After python, all requirements.txt file, and node.js installed, we can see the 'App was successfully deployed' message
-14. Below there is a button to take us to the deployed link
+14. Below there is a button to take us to the [deployed link](https://book-choicegame.herokuapp.com/)
