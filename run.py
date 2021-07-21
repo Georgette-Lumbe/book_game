@@ -5,10 +5,11 @@ from termcolor import colored
 
 
 while True:
-    # BOOK GAME OPENS IN 15s
-    opening_time = 15
+    # BOOK GAME OPENS IN 5s
+    print(colored('The BOOK GAME starts in 5s...', 'cyan'))
+    opening_time = 5
     while opening_time > 0:
-        m, s = divmod(opening_time, 15)
+        m, s = divmod(opening_time, 5)
         time_left = str(m).zfill(2) + ':' + str(s).zfill(2)
         print(time_left + '\r', end='')
         time.sleep(1)
@@ -42,13 +43,13 @@ def start_game(player_name):
     start game, set scenario, get child name and type of books
     """
     print("Your child has to give a presentation on an interesting book "
-          "in front of parents, teachers and the whole class.\n")
+          "in front of parents, teachers and the whole class.")
     time.sleep(0.5)
     print("The book should be appropriate and comprehensible.\n")
     time.sleep(2)
     child_name = input("What is your child's name?\n").capitalize()
     time.sleep(1)
-    print('Perfect!\n')
+    print('\nPerfect!')
     time.sleep(1.5)
     print(f"You should make a choice for {child_name}, be careful, "
           "make the right choice!\n")
@@ -76,7 +77,7 @@ def start_game(player_name):
         # if the player typed h, he will redirect to history_book()
         history_book(player_name, child_name)
     else:
-        print('OOPS, Invalid')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         start_game(player_name)
 
@@ -138,13 +139,13 @@ def adventure_book(player_name, child_name):
         elif 'no' in choice:
             print("It's perfect, you can find out for yourself by reading it")
         else:
-            print('OOPS, Invalid choice')
+            print('OOPS, Invalid Choice')
 
         time.sleep(1.5)
         make_another_choice(player_name, child_name)
 
     else:
-        print('OOPS, Invalid\n')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         adventure_book(player_name, child_name)
         time.sleep(2)
@@ -200,7 +201,7 @@ def romantic_book(player_name, child_name):
         elif 'no' in choice:
             print("It's perfect, you can find out for yourself by reading it")
         else:
-            print('OOPS, Invalid choice')
+            print('OOPS, Invalid Choice')
 
         time.sleep(1.5)
         make_another_choice(player_name, child_name)
@@ -210,7 +211,7 @@ def romantic_book(player_name, child_name):
         time.sleep(2)
         game_over(player_name, child_name)
     else:
-        print('OOPS, Invalid\n')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         romantic_book(player_name, child_name)
         time.sleep(2)
@@ -234,7 +235,7 @@ def comedy_book(player_name, child_name):
     time.sleep(1)
     print('Choice 2: Coco Banjo\n')
     time.sleep(1.5)
-    print(colored(f'What would you choose {player_name}? (1 or 2)'
+    print(colored(f'What would you choose {player_name}? (1 or 2)',
                   'cyan', attrs=['bold']))
     time.sleep(2)
 
@@ -278,12 +279,12 @@ def comedy_book(player_name, child_name):
         elif 'no' in choice:
             print("It's perfect, you can find out for yourself by reading it")
         else:
-            print('OOPS, Invalid choice')
+            print('OOPS, Invalid Choice')
         time.sleep(2)
         make_another_choice(player_name, child_name)
 
     else:
-        print('OOPS, Invalid\n')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         comedy_book(player_name, child_name)
         time.sleep(2)
@@ -334,7 +335,7 @@ def history_book(player_name, child_name):
         elif 'no' in choice:
             print("It's perfect, you can find out for yourself by reading it")
         else:
-            print('OOPS, Invalid choice')
+            print('OOPS, Invalid Choice')
 
         time.sleep(2)
         make_another_choice(player_name, child_name)
@@ -344,7 +345,7 @@ def history_book(player_name, child_name):
         time.sleep(2)
         game_over(player_name, child_name)
     else:
-        print('OOPS, Invalid\n')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         history_book(player_name, child_name)
         time.sleep(2)
@@ -368,17 +369,17 @@ def make_another_choice(player_name, child_name):
     elif 'no' in choice:
         print('')
         time.sleep(1)
-        print("Hope you liked the BOOK you chose for your child\n")
+        print("Hope you liked the BOOK you chose for your child!")
         print(f"{child_name} will surely love it too and make one of the best "
-              "presentations at school\n")
+              "presentations at school.")
         time.sleep(2)
         print(f"GUESS WHAT? {child_name} will be among the best\n")
         time.sleep(1.5)
-        print('IF YOU CHANGE YOUR MIND\n')
+        print('IF YOU CHANGE YOUR MIND')
         # Reload the game
-        print('CLICK THE GREEN BUTTON\n')
+        print('CLICK THE GREEN BUTTON TO RESTART\n')
     else:
-        print('OOPS, Invalid')
+        print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
         time.sleep(2)
         make_another_choice(player_name, child_name)
