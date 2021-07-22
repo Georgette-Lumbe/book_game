@@ -267,27 +267,37 @@ def make_another_choice():
     Give user the opportunity to make another choice
     """
     time.sleep(3)
-    print('')
-    print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
+    another_choice_options = ['yes', 'no']
+    user_answer = ''
+    while user_answer not in another_choice_options:
+        print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
                   '(yes or no)', 'cyan', attrs=['bold']))
-    # Take the user input
-    choice = input().lower()
-    if 'yes' in choice:
+        # Get the user's answer
+        user_answer = input().lower()
+        break
+    try:
+        if user_answer not in another_choice_options:
+            raise ValueError(
+                f'You provide wrong data {user_answer}'
+            )
+    except ValueError as e:
+        print(colored(f'Invalid : {e}, please try again',
+                      'red', attrs=['bold']))
+    
+    if user_answer == another_choice_options[0]:
         # if the player choose 'yes', start the book game from book choice
+        time.sleep(2)
         book_choice()
-    elif 'no' in choice:
-        print('')
-        time.sleep(1)
-        print("It was a pleasure to have you with us")
+    elif user_answer == another_choice_options[1]:
+        time.sleep(2)
+        print(f"It was a pleasure to have you with us {player_name}")
+        print('Hope that you enjoyed the game,'
+              'You can come back whenever you want')
         time.sleep(1)
         print('IF YOU CHANGE YOUR MIND')
         # Reload the game
-        print('JUST CLICK THE GREEN BUTTON TO RESTART')
-    else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        time.sleep(2)
-        make_another_choice()
+        print(colored('JUST CLICK THE GREEN BUTTON TO RESTART',
+                      'cyan', attrs=['bold'])
 
 # game_over function
 
