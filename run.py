@@ -162,6 +162,7 @@ def validate_integer():
         print(f"{child_name} will surely love it too and make one of the best "
               "presentations at school.\n")
         time.sleep(1.5)
+        make_another_choice()
 
 
 # Adventure book function
@@ -188,31 +189,6 @@ def adventure_book():
 
     time.sleep(1)
 
-    print(colored('Do you need a summary of this book? (yes or no)',
-                  'cyan', attrs=['bold']))
-    time.sleep(1)
-    """
-    Conditional statement to relate more about the book choosen or not
-    """
-    choice = input()
-    if 'yes' in choice:
-        print("This book is about Aleja who is a dreamer who longs for "
-              "a life of magic and adventure. So when a mysterious ship "
-              "arrives in her Spanish harbour city, crewed by a band of "
-              "ruthless women, Aleja knows it's sailed right out of a "
-              "legend. ... But life aboard the Ship of Shadows is more  "
-              "than even she bargained for.")
-        time.sleep(2)
-        make_another_choice()
-    elif 'no' in choice:
-        print("It's perfect, you can find out for yourself by reading it")
-        time.sleep(1.5)
-        make_another_choice()
-    else:
-        print('OOPS, Invalid Choice')
-        time.sleep(1.5)
-        make_another_choice()
-
 
 # Romantic book function
 
@@ -236,29 +212,6 @@ def romantic_book():
     # If user enter wrong data
     validate_integer()
     time.sleep(1)
-    print(colored('Do you need a summary of this book? (yes or no)',
-                  'cyan', attrs=['bold']))
-    time.sleep(1)
-    # Take the input
-    choice = input()
-    """
-    Conditional statement to relate more about the book choosen or not
-    """
-    if 'yes' in choice:
-        print('Mama, Do you love me? is a Charming tale of affection, '
-              'adventure, and wonder in which a young Inuit girl disobeys '
-              'wanders away from home and learns valuable lessons..')
-        time.sleep(2)
-        make_another_choice()
-    elif 'no' in choice:
-        print("It's perfect, you can find out for yourself by reading it")
-        time.sleep(1.5)
-        make_another_choice()
-    else:
-        print('OOPS, Invalid Choice')
-
-        time.sleep(1.5)
-        make_another_choice()
 
 
 # Comedy book function
@@ -283,37 +236,7 @@ def comedy_book():
     # If user enter wrong data
     validate_integer()
     time.sleep(1)
-    print(colored('Do you need a summary of this book? (yes or no)',
-                  'cyan', attrs=['bold']))
-    time.sleep(1)
-    choice = input()
-    if 'yes' in choice:
-        print("Coco Banjo to the rescue! Coco Banjo loves her life. "
-              "She sleeps in a tiger onesie, wears her mum's diamonds "
-              "just because she can, and has dolphins and penguins for "
-              "friends.")
-        time.sleep(1.5)
-        print("Today Coco's planning a Yay Day of fun on her secret "
-              "island home in the middle of Sydney Harbour. But "
-              "wait . . . what's that Secret Signal? Oh no, Narianna "
-              "(known as N) is being bullied!")
-        time.sleep(1.5)
-        print("Coco sets off for school to rescue her. But when cranky "
-              "school principal Miss Trample sees Coco's school uniform "
-              "(customised, thank you very much), Coco might be in even "
-              "more trouble than her best friend.")
-        time.sleep(1.5)
-        print("How will she get out of this one?")
-        time.sleep(2)
-        make_another_choice()
-    elif 'no' in choice:
-        print("It's perfect, you can find out for yourself by reading it")
-        time.sleep(1.5)
-        make_another_choice()
-    else:
-        print('OOPS, Invalid Choice')
-        time.sleep(2)
-        make_another_choice()
+
 
 # History book function
 
@@ -334,28 +257,6 @@ def history_book():
     time.sleep(1.5)
     # If user enter wrong data
     validate_integer()
-    time.sleep(1)
-    print(colored('Do you need a summary of this book? (yes or no)',
-                  'cyan', attrs=['bold']))
-    time.sleep(1)
-    choice = input()
-    if 'yes' in choice:
-        print("Anne Frank was a teenage Jewish girl who kept a diary "
-              "while her family was in hiding from the Nazis during "
-              "World War II. For two years, she and seven others "
-              "lived in a 'Secret Annex' lived in a 'Secret Annex'")
-        time.sleep(1)
-        print("Anne died in the Bergen-Belsen camp in 1945.")
-        time.sleep(2)
-        make_another_choice()
-    elif 'no' in choice:
-        print("It's perfect, you can find out for yourself by reading it")
-        time.sleep(1)
-        make_another_choice()
-    else:
-        print('OOPS, Invalid Choice')
-        time.sleep(2)
-        make_another_choice()
 
 
 # Function to play again
