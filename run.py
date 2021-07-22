@@ -60,26 +60,82 @@ def start_game(player_name):
                   (colored("ROMANTIC", "red", attrs=["reverse", "bold"])),
                   (colored("COMEDY", "yellow", attrs=["reverse", "bold"])),
                   (colored("HISTORY", "cyan", attrs=["reverse", "bold"])))
-    print(colored('\nWhich type of book will you choose? (a, r, c or h)\n',
-                  'cyan', attrs=['bold']))
-    # Take the type of books
-    choice = input().lower()
-    if 'a' in choice:
+
+    book_choice(player_name, child_name)
+
+
+def book_choice(player_name, child_name):
+    """
+    Function about book choice for the user
+    """
+    book_choice_options = ['a', 'r', 'c', 'h']
+    user_choice = ''
+    while user_choice not in book_choice_options:
+        print('\nWhich type of book will you choose?')
+        user_choice = input('Enter a letter: (a, r, c or h)\n')
+        break
+    try:
+        if user_choice not in book_choice_options:
+            raise ValueError(
+                f"You provide wrong data {user_choice}"
+            )
+    except ValueError as e:
+        print(f'Invalid data: {e}, please try again\n')
+        book_choice(player_name, child_name)
+
+    if user_choice == book_choice_options[0]:
         # if the player typed a, he will redirect to adventure_book()
         adventure_book(player_name, child_name)
-    elif 'r' in choice:
+    elif user_choice == book_choice_options[1]:
         # if the player typed r, he will redirect to romantic_book()
         romantic_book(player_name, child_name)
-    elif 'c' in choice:
+    elif user_choice == book_choice_options[2]:
         # if the player typed c, he will redirect to comedy_book()
         comedy_book(player_name, child_name)
-    elif 'h' in choice:
+    elif user_choice == book_choice_options[3]:
         # if the player typed h, he will redirect to history_book()
         history_book(player_name, child_name)
-    else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        start_game(player_name)
+
+
+def validate_integer(player_name, child_name):
+    """
+    Function for validate integer data
+    If the user enter an incorrect data,
+    he will ask to re-enter another data again
+    """
+    user_integer_options = ['1', '2']
+    user_integer = ' '
+    while user_integer not in user_integer_options:
+        print(colored(f'What would you choose {player_name} (1 or 2)?',
+                      'cyan', attrs=['bold']))
+        user_integer = input('Enter a number: ')
+        break
+    try:
+        if user_integer not in user_integer_options:
+            raise ValueError(
+                f"You provide wrong data {user_integer}"
+            )
+    except ValueError as e:
+        print(f'Invalid : {e}, please try again')
+        validate_integer(player_name, child_name)
+    if user_integer == user_integer_options[0]:
+        # Call game over function when it is Bad Choice
+        time.sleep(2)
+        game_over(player_name, child_name)
+    elif user_integer == user_integer_options[1]:
+        # Good Choice
+        # Style the output
+        good_choice_art = figlet_format("GOOD CHOICE", font='slant')
+        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
+        print(colored_choice)
+        time.sleep(1.5)
+        print(f"GUESS WHAT? {child_name} will be among the best")
+        print("This book is perfect for a presentation\n")
+        time.sleep(1)
+        print(f"{child_name} will surely love it too and make one of the best "
+              "presentations at school.\n")
+        time.sleep(1.5)
+
 
 # Adventure book function
 
@@ -100,55 +156,35 @@ def adventure_book(player_name, child_name):
     time.sleep(1)
     print('Choice 2: The Ship of Shadows\n')
     time.sleep(1.5)
-    print(colored(f'What would you choose {player_name}? (1 or 2)\n'
-          'cyan', attrs=['bold']))
-    time.sleep(2)
-    # Take the input
-    choice = int(input())
+    validate_integer(player_name, child_name)
+
+    time.sleep(1)
+    print(colored('Do you need a summary of this book? (yes or no)',
+                  'cyan', attrs=['bold']))
+    time.sleep(1)
     """
-    Player chooses integers 1 or 2
-    Conditional statement to determine the player choice
+    Conditional statement to relate more about the book choosen or not
     """
-    if choice == 1:
-        # Call game over function when it is Bad Choice
+    choice = input()
+    if 'yes' in choice:
+        print("This book is about Aleja who is a dreamer who longs for "
+              "a life of magic and adventure. So when a mysterious ship "
+              "arrives in her Spanish harbour city, crewed by a band of "
+              "ruthless women, Aleja knows it's sailed right out of a "
+              "legend. ... But life aboard the Ship of Shadows is more  "
+              "than even she bargained for.")
         time.sleep(2)
-        game_over(player_name, child_name)
-    elif choice == 2:
-        # Good Choice
-        # Style the output
-        good_choice_art = figlet_format("GOOD CHOICE", font='slant')
-        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
-        print(colored_choice)
+        make_another_choice(player_name, child_name)
+    elif 'no' in choice:
+        print("It's perfect, you can find out for yourself by reading it")
         time.sleep(1.5)
-        print("This adventure book is perfect for a presentation\n")
-        time.sleep(1)
-        print(colored('Do you want to know more about this book? (yes or no)\
-                       n', 'cyan', attrs=['bold']))
-        time.sleep(1)
-        """
-        Conditional statement to relate more about the book choosen or not
-        """
-        choice = input()
-        if 'yes' in choice:
-            print("This book is about Aleja who is a dreamer who longs for "
-                  "a life of magic and adventure. So when a mysterious ship "
-                  "arrives in her Spanish harbour city, crewed by a band of "
-                  "ruthless women, Aleja knows it's sailed right out of a "
-                  "legend. ... But life aboard the Ship of Shadows is more  "
-                  "than even she bargained for.")
-        elif 'no' in choice:
-            print("It's perfect, you can find out for yourself by reading it")
-        else:
-            print('OOPS, Invalid Choice')
+        make_another_choice(player_name, child_name)
+    else:
+        print('OOPS, Invalid Choice')
 
         time.sleep(1.5)
         make_another_choice(player_name, child_name)
 
-    else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        adventure_book(player_name, child_name)
-        time.sleep(2)
 
 # Romantic book function
 
@@ -163,58 +199,38 @@ def romantic_book(player_name, child_name):
     time.sleep(2)
     print(f'There are 2 choices for Romantic Books {player_name}\n')
     time.sleep(2)
-    print('Choice 1: Mama, Do you love me?\n')
+    print('Choice 1: Fifty Shades of Grey\n')
     time.sleep(1)
     print('or\n')
     time.sleep(1)
-    print('Choice 2: Fifty Shades of Grey\n')
+    print('Choice 2: Mama, Do you love me?\n')
     time.sleep(1.5)
-    print(colored(f'What would you choose {player_name}? (1 or 2)',
+    validate_integer(player_name, child_name)
+    time.sleep(1)
+    print(colored('Do you need a summary of this book? (yes or no)',
                   'cyan', attrs=['bold']))
-    time.sleep(2)
-
-    # Take the choice
-    choice = int(input())
+    time.sleep(1)
+    # Take the input
+    choice = input()
     """
-    Conditional statement for book choice
+    Conditional statement to relate more about the book choosen or not
     """
-    if choice == 1:
-        # Good Choice
-        good_choice_art = figlet_format("GOOD CHOICE", font='slant')
-        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
-        print(colored_choice)
+    if 'yes' in choice:
+        print('Mama, Do you love me? is a Charming tale of affection, '
+              'adventure, and wonder in which a young Inuit girl disobeys '
+              'wanders away from home and learns valuable lessons..')
+        time.sleep(2)
+        make_another_choice(player_name, child_name)
+    elif 'no' in choice:
+        print("It's perfect, you can find out for yourself by reading it")
         time.sleep(1.5)
-        print("This romantic book is THE BOOK\n")
-        time.sleep(1)
-        print(colored('Do you need a summary of this book? (yes or no)',
-                      'cyan', attrs=['bold']))
-        time.sleep(1)
-        # Take the input
-        choice = input()
-        """
-        Conditional statement to relate more about the book choosen or not
-        """
-        if 'yes' in choice:
-            print('Mama, Do you love me? is a Charming tale of affection, '
-                  'adventure, and wonder in which a young Inuit girl disobeys '
-                  'wanders away from home and learns valuable lessons..')
-        elif 'no' in choice:
-            print("It's perfect, you can find out for yourself by reading it")
-        else:
-            print('OOPS, Invalid Choice')
+        make_another_choice(player_name, child_name)
+    else:
+        print('OOPS, Invalid Choice')
 
         time.sleep(1.5)
         make_another_choice(player_name, child_name)
 
-    elif choice == 2:
-        # Bad Choice
-        time.sleep(2)
-        game_over(player_name, child_name)
-    else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        romantic_book(player_name, child_name)
-        time.sleep(2)
 
 # Comedy book function
 
@@ -235,59 +251,39 @@ def comedy_book(player_name, child_name):
     time.sleep(1)
     print('Choice 2: Coco Banjo\n')
     time.sleep(1.5)
-    print(colored(f'What would you choose {player_name}? (1 or 2)',
+    validate_integer(player_name, child_name)
+    time.sleep(1)
+    print(colored('Do you need a summary of this book? (yes or no)',
                   'cyan', attrs=['bold']))
-    time.sleep(2)
-
-    # Take the choice
-    choice = int(input())
-
-    if choice == 1:
-        # Bad Choice
-        time.sleep(2)
-        game_over(player_name, child_name)
-    elif choice == 2:
-        # Good Choice
-        good_choice_art = figlet_format("GOOD CHOICE", font='slant')
-        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
-        print(colored_choice)
+    time.sleep(1)
+    choice = input()
+    if 'yes' in choice:
+        print("Coco Banjo to the rescue! Coco Banjo loves her life. "
+              "She sleeps in a tiger onesie, wears her mum's diamonds "
+              "just because she can, and has dolphins and penguins for "
+              "friends.")
         time.sleep(1.5)
-        print(f"{child_name} will make everyone laugh with this book. "
-              "This is the perfect comedy book for a presentation\n")
-        time.sleep(1)
-        print(colored('Do you need a summary of this book? (yes or no),'
-                      'cyan', attrs=['bold']))
-        time.sleep(1)
-        choice = input()
-        if 'yes' in choice:
-            print("Coco Banjo to the rescue! Coco Banjo loves her life. "
-                  "She sleeps in a tiger onesie, wears her mum's diamonds "
-                  "just because she can, and has dolphins and penguins for "
-                  "friends.")
-            time.sleep(1.5)
-            print("Today Coco's planning a Yay Day of fun on her secret "
-                  "island home in the middle of Sydney Harbour. But "
-                  "wait . . . what's that Secret Signal? Oh no, Narianna "
-                  "(known as N) is being bullied!")
-            time.sleep(1.5)
-            print("Coco sets off for school to rescue her. But when cranky "
-                  "school principal Miss Trample sees Coco's school uniform "
-                  "(customised, thank you very much), Coco might be in even "
-                  "more trouble than her best friend.")
-            time.sleep(1.5)
-            print("How will she get out of this one?")
-        elif 'no' in choice:
-            print("It's perfect, you can find out for yourself by reading it")
-        else:
-            print('OOPS, Invalid Choice')
+        print("Today Coco's planning a Yay Day of fun on her secret "
+              "island home in the middle of Sydney Harbour. But "
+              "wait . . . what's that Secret Signal? Oh no, Narianna "
+              "(known as N) is being bullied!")
+        time.sleep(1.5)
+        print("Coco sets off for school to rescue her. But when cranky "
+              "school principal Miss Trample sees Coco's school uniform "
+              "(customised, thank you very much), Coco might be in even "
+              "more trouble than her best friend.")
+        time.sleep(1.5)
+        print("How will she get out of this one?")
         time.sleep(2)
         make_another_choice(player_name, child_name)
-
+    elif 'no' in choice:
+        print("It's perfect, you can find out for yourself by reading it")
+        time.sleep(1.5)
+        make_another_choice(player_name, child_name)
     else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        comedy_book(player_name, child_name)
+        print('OOPS, Invalid Choice')
         time.sleep(2)
+        make_another_choice(player_name, child_name)
 
 # History book function
 
@@ -300,55 +296,35 @@ def history_book(player_name, child_name):
     time.sleep(2)
     print(f'There are 2 choices for History Book {player_name}\n')
     time.sleep(2)
-    print('Choice 1: Who was Anne Franck?\n')
+    print('Choice 1: Treasure Island\n')
     time.sleep(1)
     print('or\n')
     time.sleep(1)
-    print('Choice 2: Treasure Island\n')
+    print('Choice 2: Who was Anne Franck?\n')
     time.sleep(1.5)
-    print(colored(f'What would you choose {player_name}? (1 or 2)',
+    validate_integer(player_name, child_name)
+    time.sleep(1)
+    print(colored('Do you need a summary of this book? (yes or no)',
                   'cyan', attrs=['bold']))
-    time.sleep(2)
-
-    # Take the choice
-    choice = int(input())
-
-    if choice == 1:
-        # Good Choice
-        good_choice_art = figlet_format("GOOD CHOICE", font='slant')
-        colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
-        print(colored_choice)
-        time.sleep(1.5)
-        print("Every child should have this book\n")
+    time.sleep(1)
+    choice = input()
+    if 'yes' in choice:
+        print("Anne Frank was a teenage Jewish girl who kept a diary "
+              "while her family was in hiding from the Nazis during "
+              "World War II. For two years, she and seven others "
+              "lived in a 'Secret Annex' lived in a 'Secret Annex'")
         time.sleep(1)
-        print(colored('Do you need a summary of this book? (yes or no)',
-                      'cyan', attrs=['bold']))
-        time.sleep(1)
-        choice = input()
-        if 'yes' in choice:
-            print("Anne Frank was a teenage Jewish girl who kept a diary "
-                  "while her family was in hiding from the Nazis during "
-                  "World War II. For two years, she and seven others "
-                  "lived in a 'Secret Annex' lived in a 'Secret Annex'")
-            time.sleep(1)
-            print("Anne died in the Bergen-Belsen camp in 1945.")
-        elif 'no' in choice:
-            print("It's perfect, you can find out for yourself by reading it")
-        else:
-            print('OOPS, Invalid Choice')
-
+        print("Anne died in the Bergen-Belsen camp in 1945.")
         time.sleep(2)
         make_another_choice(player_name, child_name)
-
-    elif choice == 2:
-        # Bad Choice
-        time.sleep(2)
-        game_over(player_name, child_name)
+    elif 'no' in choice:
+        print("It's perfect, you can find out for yourself by reading it")
+        time.sleep(1)
+        make_another_choice(player_name, child_name)
     else:
-        print('OOPS, Invalid Data')
-        print(f'Please {player_name}, make another choice\n')
-        history_book(player_name, child_name)
+        print('OOPS, Invalid Choice')
         time.sleep(2)
+        make_another_choice(player_name, child_name)
 
 # Function to play again
 
@@ -365,19 +341,15 @@ def make_another_choice(player_name, child_name):
     choice = input().lower()
     if 'yes' in choice:
         # if the player choose 'yes', start the book game from beginning
-        start_game(player_name)
+        book_choice(player_name, child_name)
     elif 'no' in choice:
         print('')
         time.sleep(1)
-        print("Hope you liked the BOOK you chose for your child!")
-        print(f"{child_name} will surely love it too and make one of the best "
-              "presentations at school.")
-        time.sleep(2)
-        print(f"GUESS WHAT? {child_name} will be among the best\n")
-        time.sleep(1.5)
+        print("It was a pleasure to have you with us")
+        time.sleep(1)
         print('IF YOU CHANGE YOUR MIND')
         # Reload the game
-        print('CLICK THE GREEN BUTTON TO RESTART\n')
+        print('JUST CLICK THE GREEN BUTTON TO RESTART')
     else:
         print('OOPS, Invalid Data')
         print(f'Please {player_name}, make another choice\n')
@@ -401,8 +373,8 @@ def game_over(player_name, child_name):
     print(f"{child_name} cannot make a presentation on this book, "
           "it is absolutely not suitable\n")
     time.sleep(1.5)
-    # Restart the game
-    start_game(player_name)
+    # Make another choice
+    make_another_choice(player_name, child_name)
 
 
 welcome()
