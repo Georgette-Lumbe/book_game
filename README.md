@@ -117,8 +117,8 @@ Testing information can be found in a separate [testing file]().
 4. [Heroku](https://id.heroku.com/login) was used to deploy the program
 5. [Favicon](https://favicon.io/favicon-converter/) was used to convert an image form [Unsplash](https://unsplash.com/) to a favicon for the Book Game.
 6. [Giphy](https://giphy.com/) was used to import the gif
-7. [Pep8](http://pep8online.com/) was used to test and validate the code
-8. [Youtube](https://www.youtube.com/) was used for further clarification 
+7. [Pep8](http://pep8online.com/) was used to test and validate the code.
+8. [Youtube](https://www.youtube.com/) was used for further clarification.
 
 [Back to top](#introduction "Goto introduction")
 
