@@ -3,10 +3,18 @@ import time
 from pyfiglet import figlet_format
 from termcolor import colored
 
+# Import a styling logo name from Ascii Art Generator
+
+print(' ▄▄▄▄    ▒█████   ▒█████   ██ ▄█▀     ▄████  ▄▄▄       ███▄ ▄███▓▓███')
+print('▓█████▄ ▒██▒  ██▒▒██▒  ██▒ ██▄█▒     ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█  ')
+print('▒██▒ ▄██▒██░  ██▒▒██░  ██▒▓███▄░    ▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███')
+print('▒██░█▀  ▒██   ██░▒██   ██░▓██ █▄    ░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ')
+print('░▓█  ▀█▓░ ████▓▒░░ ████▓▒░▒██▒ █▄   ░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒███')
+print('░▒▓███▀▒░ ▒░▒░▒░ ░ ▒░▒░▒░ ▒ ▒▒ ▓▒    ░▒   ▒  ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░')
 
 while True:
     # BOOK GAME OPENS IN 5s
-    print(colored('The BOOK GAME starts in 5s...', 'cyan'))
+    print(colored('\nThe BOOK GAME starts in 5s...', 'cyan'))
     opening_time = 5
     while opening_time > 0:
         m, s = divmod(opening_time, 5)
