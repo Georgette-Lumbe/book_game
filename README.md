@@ -18,8 +18,7 @@
     
 4. [Testing](#testing "Goto testing")
 
-    - [Manual Testing](#)
-    - [Validator Testing](#)
+    - [Testing file](https://github.com/Georgette-Lumbe/book_game/blob/main/TESTING.md)
 
 5. [Issues and Unfixed bugs](#issues-and-unfixed-bugs "Goto issues and unfixed bugs")
 
@@ -94,7 +93,7 @@ User Goals:
 
 # Testing
 
-Testing information can be found in a separate [testing file]().
+Testing information can be found in a separate [testing file](https://github.com/Georgette-Lumbe/book_game/blob/main/TESTING.md).
 
 [Back to top](#introduction "Goto introduction")
 
@@ -119,6 +118,7 @@ Testing information can be found in a separate [testing file]().
 6. [Giphy](https://giphy.com/) was used to import the gif
 7. [Pep8](http://pep8online.com/) was used to test and validate the code.
 8. [Youtube](https://www.youtube.com/) was used for further clarification.
+9. [Text to Ascii Art Generator](http://patorjk.com/software/taag/#p=display&f=Bloody&t=See%20you) was used to generate a styling logo name and a good bye message.
 
 [Back to top](#introduction "Goto introduction")
 
@@ -157,7 +157,7 @@ To deploy this program to Heroku, the developer followed these steps:
     - [Termcolor](https://pypi.org/project/termcolor/)
     - [W3CSchools](https://www.w3schools.com/)
     - [Tech Touhid](https://www.youtube.com/watch?v=zUf1BM1l8MQ), How to make Awesome ASCII Art with Pyfiglet in Python Programming.
-    - * [HowCode](https://www.youtube.com/watch?v=5uVXbb1ymVs), Simple countdown.
+    - [HowCode](https://www.youtube.com/watch?v=5uVXbb1ymVs), Simple countdown.
 
 ## Media
 * The developer used a gif to make the site more attractive, the gif was taken from [Giphy](https://giphy.com/).

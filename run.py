@@ -14,7 +14,7 @@ print('░▒▓███▀▒░ ▒░▒░▒░ ░ ▒░▒░▒░ ▒
 
 while True:
     # BOOK GAME OPENS IN 5s
-    print(colored('\nThe BOOK GAME starts in 5s...', 'cyan'))
+    print(colored('\nThe BOOK GAME starts in 5s...', attrs=['bold']))
     opening_time = 5
     while opening_time > 0:
         m, s = divmod(opening_time, 5)
