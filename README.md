@@ -1,5 +1,7 @@
 # BOOK GAME
 
+<img src='docs/screenshots/am_i_responsive.PNG'>
+
 [View the live project here](https://book-choicegame.herokuapp.com/)
 
 # Table of Content
@@ -67,23 +69,23 @@ User Goals:
 
 ## Existing Features
 
-1. Run Program Button
-    * At the top of the terminal, there is a green button which allows the user to run the program from the start whenever he wants.
+1. Gif
+* On top of the program, there is an animation gif, which brings an attractiveness to the game.
 
-    <img src=''>
+    <img src='docs/screenshots/gif.PNG'>
 
-2. Terminal Area
-    * This section allows the user to start the program, follow the instructions and enter data.
+2. Run Program Button
+* At the top of the terminal, there is a green button which allows the user to run the program from the start whenever he wants.
 
-    <img src=''>
+    <img src='docs/screenshots/run_button.PNG'> 
 
-3. Gif
-    * On top of the program, there is an animation gif, which brings an attractiveness to the game.
+3. Terminal Area
+* This section allows the user to start the program, follow the instructions and enter data.
 
-    <img src=''>
+    <img src='docs/screenshots/terminal_area.PNG'>
 
-3. Program Structure
-    * In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in [Diagram Software and Flowchart Maker](https://www.diagrams.net/).
+4. Program Structure
+* In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in [Diagram Software and Flowchart Maker](https://www.diagrams.net/).
 
     <img src=''>
 
@@ -148,6 +150,8 @@ To deploy this program to Heroku, the developer followed these steps:
 16. Click to Deploy branch
 17. After python, all requirements.txt file, and node.js installed, we can see the 'App was successfully deployed' message
 18. Below there is a button to take us to the [deployed link](https://book-choicegame.herokuapp.com/)
+
+    <img src='docs/screenshots/heroku_deploy.PNG'>
 
 # Credits
 

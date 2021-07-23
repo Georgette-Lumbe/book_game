@@ -60,25 +60,25 @@ If the user makes a wrong choice, he can make another choice.
 
 * PEP8 Online Validation was used to validate the code, to ensure there were no syntax errors or improper code.
 
-<img src=''>
+<img src='docs/testing/pep_eight.PNG'>
 
 ## Browser Validation
 
 1. Chrome
 
-<img src=''>
+<img src='docs/testing/chrome.PNG'>
 
 2. Edge
 
-<img src=''>
+<img src='docs/testing/edge.PNG'>
 
 3. Opera
 
-<img src=''>
+<img src='docs/testing/opera.PNG'>
 
 4. Firefox
 
-<img src=''>
+<img src='docs/testing/firefox.PNG'>
 
 # User Testing
 
@@ -88,5 +88,6 @@ The following changes were made after their testing:
 
 * Correct some spelling mistakes.
 * Review some errors about calling functions.
+* Add helper functions, while loop, try and except to alert when user enters a wrong data.
 
  [Back to top](#manual-testing-user-stories "#Goto manual testing user stories")
