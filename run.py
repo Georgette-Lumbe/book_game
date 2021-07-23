@@ -30,10 +30,26 @@ class Data:
     Get player data
     use of these data throughout the book game
     """
+    def __init__(self):
+        self.player_name = ''
+        self.child_name = ''
+        self.book_choice = ''
+        self.book_decision = ''
 
-    def getData(self, player_name, child_name):
-        Data.player_name = player_name
-        Data.child_name = child_name
+    def setPlayerName(self, player_name):
+        self.player_name = player_name
+
+    def setChildName(self, child_name):
+        self.child_name = child_name
+
+    def setBookChoice(self, book_choice):
+        self.book_choice = book_choice
+
+    def setBookDecision(self, book_decision):
+        self.book_decision = book_decision
+
+
+c1 = Data()
 
 
 def welcome():
@@ -42,7 +58,7 @@ def welcome():
     """
     time.sleep(2)
     # Style the welcome message
-    welcome_art = figlet_format(f"Welcome {player_name}", font='slant')
+    welcome_art = figlet_format(f"Welcome {c1.player_name}", font='slant')
     colored_art = colored(welcome_art, 'cyan', attrs=['bold'])
     print(colored_art)
     time.sleep(2)
@@ -50,8 +66,9 @@ def welcome():
     time.sleep(1)
 
 
-player_name = input(colored("What is your name?\n",
-                    'cyan', attrs=['bold'])).capitalize()
+c1.setPlayerName(input(colored("What is your name?\n",
+                 'cyan', attrs=['bold'])).capitalize())
+
 welcome()
 
 # Function to start the game
@@ -64,15 +81,15 @@ def start_game():
     time.sleep(1)
     print('\nPerfect!')
     time.sleep(2)
-    print(f"{child_name} has to give a presentation on an interesting book "
+    print(f"{c1.child_name} has to give a presentation on an interesting book "
           "in front of parents, teachers and the whole class.")
     time.sleep(0.5)
     print("The book should be appropriate and comprehensible.\n")
     time.sleep(1.5)
-    print(f"You should make a choice for {child_name}, be careful, "
+    print(f"You should make a choice for {c1.child_name}, be careful, "
           "make the right choice!\n")
     time.sleep(2)
-    print(f"{player_name}, there are 4 types of books.\n")
+    print(f"{c1.player_name}, there are 4 types of books.\n")
     time.sleep(1)
     # Style types of books
     print(("  "), (colored("ADVENTURE", "green", attrs=["reverse", "bold"])),
@@ -82,8 +99,8 @@ def start_game():
     time.sleep(1.5)
 
 
-child_name = input(colored("What is your child's name?\n",
-                   'cyan', attrs=['bold'])).capitalize()
+c1.setChildName(input(colored("What is your child's name?\n",
+                'cyan', attrs=['bold'])).capitalize())
 
 
 def book_choice():
@@ -98,35 +115,35 @@ def book_choice():
     while user_choice not in book_choice_options:
         print(colored('\nWhich type of book will you choose?'
                       '(a, r, c or h)', 'cyan', attrs=['bold']))
-        user_choice = input('Enter a letter: ')
+        user_choice = input('Enter a letter: ').lower()
+        c1.setBookChoice(user_choice)
         break
     try:
-        print(user_choice)
-        if user_choice and user_choice.lower() not in book_choice_options:
+        if c1.book_choice and c1.book_choice not in book_choice_options:
             raise ValueError(
-                f"You provide wrong data {user_choice}"
+                f"You provide wrong data {c1.book_choice}"
             )
     except ValueError as e:
         print(colored(f'Invalid : {e}, please try again',
                       'red', attrs=['bold']))
         book_choice()
 
-    if user_choice.lower() == book_choice_options[0] or \
-       user_choice.lower() == book_choice_options[1]:
+    if c1.book_choice == book_choice_options[0] or \
+       c1.book_choice == book_choice_options[1]:
         # if the player typed a, he will redirect to adventure_book()
         adventure_book()
-    elif user_choice.lower() == book_choice_options[2] or \
-            user_choice.lower() == book_choice_options[3]:
+    elif c1.book_choice == book_choice_options[2] or \
+            c1.book_choice == book_choice_options[3]:
         # if the player typed r, he will redirect to romantic_book()
         romantic_book()
-    elif user_choice.lower() == book_choice_options[4] or \
-            user_choice.lower() == book_choice_options[5]:
+    elif c1.book_choice == book_choice_options[4] or \
+            c1.book_choice == book_choice_options[5]:
         # if the player typed c, he will redirect to comedy_book()
         comedy_book()
-    elif user_choice.lower() == book_choice_options[6] or \
-            user_choice.lower() == book_choice_options[7]:
+    elif c1.book_choice == book_choice_options[6] or \
+            c1.book_choice == book_choice_options[7]:
         # if the player typed h, he will redirect to history_book()
-        history_book()
+        history_book
 
 
 def validate_integer():
@@ -139,15 +156,16 @@ def validate_integer():
     user_integer_options = ['1', '2']
     user_integer = ' '
     while user_integer not in user_integer_options:
-        print(colored(f'\nWhat would you choose {player_name} (1 or 2)?',
+        print(colored(f'\nWhat would you choose {c1.player_name} (1 or 2)?',
                       'cyan', attrs=['bold']))
         user_integer = input('Enter a number: ')
+        c1.setBookDecision(user_integer)
         time.sleep(1.5)
         break
     try:
-        if user_integer not in user_integer_options:
+        if c1.book_decision not in user_integer_options:
             raise ValueError(
-                f"You provide wrong data {user_integer}"
+                f"You provide wrong data {c1.book_decision}"
             )
     except ValueError as e:
         print(colored(f'Invalid : {e}, please try again',
@@ -155,22 +173,22 @@ def validate_integer():
         # Call again validate_integer if user enter wrong data
         validate_integer()
 
-    if user_integer == user_integer_options[0]:
+    if c1.book_decision == user_integer_options[0]:
         # Call game over function when it is Bad Choice
         time.sleep(2)
         game_over()
-    elif user_integer == user_integer_options[1]:
+    elif c1.book_decision == user_integer_options[1]:
         # Good Choice
         # Style the output
         good_choice_art = figlet_format("GOOD CHOICE", font='slant')
         colored_choice = colored(good_choice_art, 'green', attrs=['bold'])
         print(colored_choice)
         time.sleep(1.5)
-        print(f"GUESS WHAT? {child_name} will be among the best")
+        print(f"GUESS WHAT? {c1.child_name} will be among the best")
         print("This book is perfect for a presentation\n")
         time.sleep(1)
-        print(f"{child_name} will surely love it too and make one of the best "
-              "presentations at school.\n")
+        print(f"{c1.child_name} will surely love it too and make one of the "
+              " best presentations at school.\n")
         time.sleep(1.5)
         make_another_choice()
 
@@ -187,7 +205,7 @@ def adventure_book():
     time.sleep(1)
     print("Let's bring some adventure into this presentation\n")
     time.sleep(2)
-    print(f'There are 2 choices for Adventure Books {player_name}')
+    print(f'There are 2 choices for Adventure Books {c1.player_name}')
     time.sleep(2)
     print('Choice 1: The Shadow of Glass\n')
     time.sleep(1)
@@ -213,7 +231,7 @@ def romantic_book():
     time.sleep(1)
     print("Let's bring some love into this presentation\n")
     time.sleep(2)
-    print(f'There are 2 choices for Romantic Books {player_name}\n')
+    print(f'There are 2 choices for Romantic Books {c1.player_name}\n')
     time.sleep(2)
     print('Choice 1: Fifty Shades of Grey\n')
     time.sleep(1)
@@ -238,7 +256,7 @@ def comedy_book():
     time.sleep(1)
     print("Let's bring some fun into this presentation\n")
     time.sleep(2)
-    print(f'There are 2 choices for Comedy Books {player_name}')
+    print(f'There are 2 choices for Comedy Books {c1.player_name}')
     time.sleep(2)
     print('Choice 1: Double Trouble\n')
     time.sleep(1)
@@ -261,7 +279,7 @@ def history_book():
     """
     print('\nThat is great!! You have chosen the History Book')
     time.sleep(2)
-    print(f'There are 2 choices for History Book {player_name}\n')
+    print(f'There are 2 choices for History Book {c1.player_name}\n')
     time.sleep(2)
     print('Choice 1: Treasure Island\n')
     time.sleep(1)
@@ -269,7 +287,7 @@ def history_book():
     time.sleep(1)
     print('Choice 2: Who was Anne Franck?\n')
     time.sleep(1.5)
-    # If user enter wrong data
+    # If user enters wrong data
     validate_integer()
 
 
@@ -286,7 +304,7 @@ def make_another_choice():
     another_choice_options = ['y', 'yes', 'n', 'no']
     user_answer = ''
     while user_answer not in another_choice_options:
-        print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
+        print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {c1.player_name}?'
                       '(yes or no)', 'cyan', attrs=['bold']))
         # Get the user's answer
         user_answer = input().lower()
@@ -309,7 +327,7 @@ def make_another_choice():
     elif user_answer == another_choice_options[2] or \
             user_answer == another_choice_options[3]:
         time.sleep(2)
-        print(f"\nIt was a pleasure to have you with us {player_name}")
+        print(f"\nIt was a pleasure to have you with us {c1.player_name}")
         print('Hope that you enjoyed the game,'
               'You can come back whenever you want.\n')
         time.sleep(1)
@@ -342,9 +360,9 @@ def game_over():
     print(colored_ascii)
     time.sleep(1)
     print("You should make another choice "
-          f"so that {child_name} can make the best presentation to "
+          f"so that {c1.child_name} can make the best presentation to "
           "everyone")
-    print(f"{child_name} cannot make a presentation on this book, "
+    print(f"{c1.child_name} cannot make a presentation on this book, "
           "it is absolutely not suitable\n")
     time.sleep(1.5)
     # Make another choice
@@ -355,5 +373,3 @@ def game_over():
 
 start_game()
 book_choice()
-c1 = Data()
-c1.getData(player_name, child_name)
