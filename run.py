@@ -92,7 +92,8 @@ def book_choice():
     A while loop to check user' input
     try and except for ValueError
     """
-    book_choice_options = ['a', 'r', 'c', 'h']
+    book_choice_options = ['a', 'adventure', 'r', 'romantic', 'c', 'comedy',
+                           'h', 'history']
     user_choice = ''
     while user_choice not in book_choice_options:
         print(colored('\nWhich type of book will you choose?'
@@ -100,7 +101,8 @@ def book_choice():
         user_choice = input('Enter a letter: ')
         break
     try:
-        if user_choice not in book_choice_options:
+        print(user_choice)
+        if user_choice and user_choice.lower() not in book_choice_options:
             raise ValueError(
                 f"You provide wrong data {user_choice}"
             )
@@ -109,16 +111,20 @@ def book_choice():
                       'red', attrs=['bold']))
         book_choice()
 
-    if user_choice == book_choice_options[0]:
+    if user_choice.lower() == book_choice_options[0] or \
+       user_choice.lower() == book_choice_options[1]:
         # if the player typed a, he will redirect to adventure_book()
         adventure_book()
-    elif user_choice == book_choice_options[1]:
+    elif user_choice.lower() == book_choice_options[2] or \
+            user_choice.lower() == book_choice_options[3]:
         # if the player typed r, he will redirect to romantic_book()
         romantic_book()
-    elif user_choice == book_choice_options[2]:
+    elif user_choice.lower() == book_choice_options[4] or \
+            user_choice.lower() == book_choice_options[5]:
         # if the player typed c, he will redirect to comedy_book()
         comedy_book()
-    elif user_choice == book_choice_options[3]:
+    elif user_choice.lower() == book_choice_options[6] or \
+            user_choice.lower() == book_choice_options[7]:
         # if the player typed h, he will redirect to history_book()
         history_book()
 
@@ -277,7 +283,7 @@ def make_another_choice():
     try and except for ValueError
     """
     time.sleep(3)
-    another_choice_options = ['yes', 'no']
+    another_choice_options = ['y', 'yes', 'n', 'no']
     user_answer = ''
     while user_answer not in another_choice_options:
         print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
@@ -286,7 +292,7 @@ def make_another_choice():
         user_answer = input().lower()
         break
     try:
-        if user_answer not in another_choice_options:
+        if user_answer and user_answer not in another_choice_options:
             raise ValueError(
                 f'You provide wrong data {user_answer}'
             )
@@ -295,11 +301,13 @@ def make_another_choice():
                       'red', attrs=['bold']))
         make_another_choice()
 
-    if user_answer == another_choice_options[0]:
+    if user_answer == another_choice_options[0] or \
+       user_answer == another_choice_options[1]:
         # if the player choose 'yes', start the book game from book choice
         time.sleep(2)
         book_choice()
-    elif user_answer == another_choice_options[1]:
+    elif user_answer == another_choice_options[2] or \
+            user_answer == another_choice_options[3]:
         time.sleep(2)
         print(f"\nIt was a pleasure to have you with us {player_name}")
         print('Hope that you enjoyed the game,'
