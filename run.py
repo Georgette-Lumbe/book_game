@@ -121,6 +121,7 @@ def book_choice():
         current_user.setBookChoice(user_choice)
         break
     try:
+        # If user choice exists and if it's not inn book choice options
         if current_user.book_choice and current_user.book_choice not in\
                 book_choice_options:
             raise ValueError(
@@ -130,23 +131,24 @@ def book_choice():
         print(colored(f'Invalid : {e}, please try again',
                       'red', attrs=['bold']))
         book_choice()
-
+    # Make user choice more flexible
     if current_user.book_choice == book_choice_options[0] or \
        current_user.book_choice == book_choice_options[1]:
         # if the player typed a, he will redirect to adventure_book()
-        adventure_book()
+        book_chosen('Adventure', 'The Shadow of Glass', 'The Ship of Shadows')
     elif current_user.book_choice == book_choice_options[2] or \
             current_user.book_choice == book_choice_options[3]:
         # if the player typed r, he will redirect to romantic_book()
-        romantic_book()
+        book_chosen('Romantic', 'Fifty Shades of Grey', 'Mama, '
+                    'Do You love me?')
     elif current_user.book_choice == book_choice_options[4] or \
             current_user.book_choice == book_choice_options[5]:
         # if the player typed c, he will redirect to comedy_book()
-        comedy_book()
+        book_chosen('Comedy', 'Double Trouble', 'Coco Banjo')
     elif current_user.book_choice == book_choice_options[6] or \
             current_user.book_choice == book_choice_options[7]:
         # if the player typed h, he will redirect to history_book()
-        history_book
+        book_chosen('History', 'Treasure Island', 'Who was Anne Franck?')
 
 
 def validate_integer():
@@ -166,6 +168,7 @@ def validate_integer():
         time.sleep(1.5)
         break
     try:
+        # If user integer is not in user integer options
         if current_user.book_decision not in user_integer_options:
             raise ValueError(
                 f"You provide wrong data {current_user.book_decision}"
@@ -196,105 +199,30 @@ def validate_integer():
         make_another_choice()
 
 
-# Adventure book function
+# Book chosen function
 
 
-def adventure_book():
+def book_chosen(book_type, choice_1, choice_2):
     """
-    Description of situation
-    with a choice of adventure book
+    Adventure, romantic, comedy and history
+    all book types in one function
+    call and change data by arguments
     """
-    print('\nYay!! You have chosen the Adventure Book')
+    print(f'\nThat is great!! You have chosen the {book_type} Book')
     time.sleep(1)
-    print("Let's bring some adventure into this presentation\n")
+    print(f"Let's bring some {book_type} into this presentation\n")
     time.sleep(2)
-    print(f'There are 2 choices for Adventure Books '
-          f'{current_user.player_name}')
+    print(f'There are 2 choices for {book_type} {current_user.player_name}\n')
     time.sleep(2)
-    print('Choice 1: The Shadow of Glass\n')
+    print(f'Choice 1: {choice_1}\n')
     time.sleep(1)
     print('or\n')
     time.sleep(1)
-    print('Choice 2: The Ship of Shadows\n')
-    time.sleep(1.5)
-    # If user enter wrong data
-    validate_integer()
-
-    time.sleep(1)
-
-
-# Romantic book function
-
-
-def romantic_book():
-    """
-    Description of situation
-    with a choice of romantic book
-    """
-    print('\nPerfect!! You have chosen the Romantic Book')
-    time.sleep(1)
-    print("Let's bring some love into this presentation\n")
-    time.sleep(2)
-    print(f'There are 2 choices for Romantic Books '
-          f'{current_user.player_name}\n')
-    time.sleep(2)
-    print('Choice 1: Fifty Shades of Grey\n')
-    time.sleep(1)
-    print('or\n')
-    time.sleep(1)
-    print('Choice 2: Mama, Do you love me?\n')
-    time.sleep(1.5)
-    # If user enter wrong data
-    validate_integer()
-    time.sleep(1)
-
-
-# Comedy book function
-
-
-def comedy_book():
-    """
-    Description of situation
-    with a choice of comedy book
-    """
-    print('\nHA HA!! You have chosen the Comedy Book')
-    time.sleep(1)
-    print("Let's bring some fun into this presentation\n")
-    time.sleep(2)
-    print(f'There are 2 choices for Comedy Books {current_user.player_name}')
-    time.sleep(2)
-    print('Choice 1: Double Trouble\n')
-    time.sleep(1)
-    print('or\n')
-    time.sleep(1)
-    print('Choice 2: Coco Banjo\n')
-    time.sleep(1.5)
-    # If user enter wrong data
-    validate_integer()
-    time.sleep(1)
-
-
-# History book function
-
-
-def history_book():
-    """
-    Description of situation
-    with a choice of history book
-    """
-    print('\nThat is great!! You have chosen the History Book')
-    time.sleep(2)
-    print(f'There are 2 choices for History Book {current_user.player_name}\n')
-    time.sleep(2)
-    print('Choice 1: Treasure Island\n')
-    time.sleep(1)
-    print('or\n')
-    time.sleep(1)
-    print('Choice 2: Who was Anne Franck?\n')
+    print(f'Choice 2: {choice_2}\n')
     time.sleep(1.5)
     # If user enters wrong data
     validate_integer()
-
+    time.sleep(1)
 
 # Function to play again
 
@@ -316,6 +244,7 @@ def make_another_choice():
         user_answer = input().lower()
         break
     try:
+        # If user answer exists and if it's not in another choice options
         if user_answer and user_answer not in another_choice_options:
             raise ValueError(
                 f'You provide wrong data {user_answer}'
@@ -324,7 +253,7 @@ def make_another_choice():
         print(colored(f'Invalid : {e}, please try again\n',
                       'red', attrs=['bold']))
         make_another_choice()
-
+    # Make input more flexible
     if user_answer == another_choice_options[0] or \
        user_answer == another_choice_options[1]:
         # if the player choose 'yes', start the book game from book choice
@@ -375,7 +304,7 @@ def game_over():
     # Make another choice
     make_another_choice()
 
-# Call functions
+# Call start game and bookchoice functions
 
 
 start_game()
