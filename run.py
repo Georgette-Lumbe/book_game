@@ -26,6 +26,10 @@ while True:
 
 
 class Data:
+    """
+    Get player data
+    use of these data throughout the book game
+    """
 
     def getData(self, player_name, child_name):
         Data.player_name = player_name
@@ -34,7 +38,7 @@ class Data:
 
 def welcome():
     """
-    Welcome and get player data
+    Welcome and get player name
     """
     time.sleep(2)
     # Style the welcome message
@@ -55,7 +59,7 @@ welcome()
 
 def start_game():
     """
-    start game, set scenario, get child name and type of books
+    Start game, set scenario, get child name and type of books
     """
     time.sleep(1)
     print('\nPerfect!')
@@ -171,6 +175,7 @@ def validate_integer():
 def adventure_book():
     """
     Description of situation
+    with a choice of adventure book
     """
     print('\nYay!! You have chosen the Adventure Book')
     time.sleep(1)
@@ -195,7 +200,8 @@ def adventure_book():
 
 def romantic_book():
     """
-    Description of situation with differents choices
+    Description of situation
+    with a choice of romantic book
     """
     print('\nPerfect!! You have chosen the Romantic Book')
     time.sleep(1)
@@ -220,6 +226,7 @@ def romantic_book():
 def comedy_book():
     """
     Description of situation
+    with a choice of comedy book
     """
     print('\nHA HA!! You have chosen the Comedy Book')
     time.sleep(1)
@@ -244,6 +251,7 @@ def comedy_book():
 def history_book():
     """
     Description of situation
+    with a choice of history book
     """
     print('\nThat is great!! You have chosen the History Book')
     time.sleep(2)
@@ -265,13 +273,15 @@ def history_book():
 def make_another_choice():
     """
     Give user the opportunity to make another choice
+    A while loop to check user' input
+    try and except for ValueError
     """
     time.sleep(3)
     another_choice_options = ['yes', 'no']
     user_answer = ''
     while user_answer not in another_choice_options:
         print(colored(f'DO YOU WANT TO MAKE ANOTHER CHOICE {player_name}?'
-                  '(yes or no)', 'cyan', attrs=['bold']))
+                      '(yes or no)', 'cyan', attrs=['bold']))
         # Get the user's answer
         user_answer = input().lower()
         break
@@ -281,23 +291,36 @@ def make_another_choice():
                 f'You provide wrong data {user_answer}'
             )
     except ValueError as e:
-        print(colored(f'Invalid : {e}, please try again',
+        print(colored(f'Invalid : {e}, please try again\n',
                       'red', attrs=['bold']))
-    
+        make_another_choice()
+
     if user_answer == another_choice_options[0]:
         # if the player choose 'yes', start the book game from book choice
         time.sleep(2)
         book_choice()
     elif user_answer == another_choice_options[1]:
         time.sleep(2)
-        print(f"It was a pleasure to have you with us {player_name}")
+        print(f"\nIt was a pleasure to have you with us {player_name}")
         print('Hope that you enjoyed the game,'
-              'You can come back whenever you want')
+              'You can come back whenever you want.\n')
         time.sleep(1)
-        print('IF YOU CHANGE YOUR MIND')
+        print(colored('IF YOU CHANGE YOUR MIND', 'green',
+                      attrs=['bold']))
         # Reload the game
-        print(colored('JUST CLICK THE GREEN BUTTON TO RESTART',
-                      'cyan', attrs=['bold'])
+        print(colored('JUST CLICK THE GREEN BUTTON TO RESTART\n',
+                      'green', attrs=['bold']))
+        time.sleep(2)
+
+        # Import a styling good bye message from Ascii Art Generator
+
+        print('  ██████ ▓█████ ▓█████    ▓██   ██▓ ▒█████   █    ██ ')
+        print('▒██    ▒ ▓█   ▀ ▓█   ▀     ▒██  ██▒▒██▒  ██▒ ██  ▓██▒')
+        print('░ ▓██▄   ▒███   ▒███        ▒██ ██░▒██░  ██▒▓██  ▒██░')
+        print('  ▒   ██▒▒▓█  ▄ ▒▓█  ▄      ░ ▐██▓░▒██   ██░▓▓█  ░██░')
+        print('▒██████▒▒░▒████▒░▒████▒     ░ ██▒▓░░ ████▓▒░▒▒█████▓ ')
+        print('▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░      ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ')
+        print('░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░    ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░ ')
 
 # game_over function
 
