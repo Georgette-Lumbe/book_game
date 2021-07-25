@@ -62,8 +62,9 @@ User Goals:
 * I would like to run the program whenever I want
 * I would like to choose the type of book that I want
 * I would like to choose the book I want
-* I would like to know more about the book that I chose
+* I would like to see a feedback after my choice
 * I would like to make another choice easily
+* I would like to see a good bye message
 
 # Features
 
@@ -81,8 +82,29 @@ User Goals:
 
 3. Terminal Area
 * This section allows the user to start the program, follow the instructions and enter data.
+    - Logo & Welcome Message 
 
-    <img src='docs/screenshots/terminal_area.PNG'>
+    <img src=''>
+
+    - Questions asked
+
+    <img src=''>  <img src=''>  <img src=''>
+    <img src=''>  <img src=''>
+    
+    - User responds
+
+    <img src=''>  <img src=''>  <img src=''>
+    <img src=''>  <img src=''>
+
+    - Feedback to user
+
+    <img src=''>
+
+    <img src=''> 
+
+    - Good Bye message
+
+    <img src=''>
 
 4. Program Structure
 * In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in [Diagram Software and Flowchart Maker](https://www.diagrams.net/).
@@ -100,6 +122,29 @@ Testing information can be found in a separate [testing file](https://github.com
 [Back to top](#introduction "Goto introduction")
 
 # Issues and Unfixed bugs
+
+1. Time counter: 
+
+The developer wanted the 5 seconds for the opening of the game to count on the terminal so that the user could see the time count. 
+On the Gitpod terminal, the time counts as the developer wanted but on the heroku terminal the counter doesn't show, there is just a timeout for 5 seconds.
+
+2. Logo:
+
+The developer has encountered a problem with the Book Game logo which is styled from Ascii Art Generator. When copying each step (with more than 79 characters on a line) of the logo via the generator, there was a problem as the Gitpod workspace does not accept more than 79 characters on a line. The developer had to remove some of the last characters from the logo so that the workspace would look good and be easy to follow.
+
+3. Text:
+
+Testing the program on Gitpod, the text appears perfectly fine. But once on the deployed site, some syllables are not well represented.
+
+4. Helper functions:
+
+The user could write something else starting with the suggested data, e.g. if the user was asked to enter yes or no, the user could just enter yesjfkf and the code would work. Why would this happen? Just because it started with yes. 
+To avoid this, the developer created two helper functions (validate_integer & book_choice), which would return 'Invalid data' whenever the user entered something that was not suggested even if he enters nothing of the sort, it will be considered as invalid data.
+
+5. Summary Option:
+
+At the beginning, the developer had put an additional option, that of proposing to the user a summary in case they had chosen the right book. But this option was removed when the developer used the Helper functions. 
+Indeed, this option was linked to the book_choice function, and would only have had an effect if the user had chosen the right answer. The developer preferred to remove this option to avoid complicating the code.
 
 # Technologies used
 

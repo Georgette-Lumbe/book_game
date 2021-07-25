@@ -65,7 +65,7 @@ def welcome():
     # Style the welcome message
     welcome_art = figlet_format(f"Welcome {current_user.player_name}",
                                 font='slant')
-    colored_art = colored(welcome_art, 'cyan', attrs=['bold'])
+    colored_art = colored(welcome_art, attrs=['bold'])
     print(colored_art)
     time.sleep(2)
     print("Happy to have you here. So, let's start\n")
@@ -146,20 +146,20 @@ def book_choice():
     # Make user choice more flexible
     if current_user.book_choice == book_choice_options[0] or \
        current_user.book_choice == book_choice_options[1]:
-        # if the player typed a, he will redirect to adventure_book()
+        # if the player typed a, he will redirect to adventure book
         book_chosen('Adventure', 'The Shadow of Glass', 'The Ship of Shadows')
     elif current_user.book_choice == book_choice_options[2] or \
             current_user.book_choice == book_choice_options[3]:
-        # if the player typed r, he will redirect to romantic_book()
+        # if the player typed r, he will redirect to romantic book
         book_chosen('Romantic', 'Fifty Shades of Grey', 'Mama, '
                     'Do You love me?')
     elif current_user.book_choice == book_choice_options[4] or \
             current_user.book_choice == book_choice_options[5]:
-        # if the player typed c, he will redirect to comedy_book()
+        # if the player typed c, he will redirect to comedy book
         book_chosen('Comedy', 'Double Trouble', 'Coco Banjo')
     elif current_user.book_choice == book_choice_options[6] or \
             current_user.book_choice == book_choice_options[7]:
-        # if the player typed h, he will redirect to history_book()
+        # if the player typed h, he will redirect to history book
         book_chosen('History', 'Treasure Island', 'Who was Anne Franck?')
 
 
@@ -224,7 +224,8 @@ def book_chosen(book_type, choice_1, choice_2):
     time.sleep(1)
     print(f"Let's bring some {book_type} into this presentation\n")
     time.sleep(2)
-    print(f'There are 2 choices for {book_type} {current_user.player_name}\n')
+    print(f'There are 2 choices for {book_type} Book '
+          f'{current_user.player_name}\n')
     time.sleep(2)
     print(f'Choice 1: {choice_1}\n')
     time.sleep(1.5)
