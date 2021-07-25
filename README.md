@@ -84,27 +84,37 @@ User Goals:
 * This section allows the user to start the program, follow the instructions and enter data.
     - Logo & Welcome Message 
 
-    <img src=''>
+    <img src='docs/screenshots/terminal_area.PNG'>
 
-    - Questions asked
+    - Scenario
 
-    <img src=''>  <img src=''>  <img src=''>
-    <img src=''>  <img src=''>
-    
-    - User responds
+    <img src='docs/screenshots/scenario.PNG'>
 
-    <img src=''>  <img src=''>  <img src=''>
-    <img src=''>  <img src=''>
+    - Types of books
+
+    <img src='docs/screenshots/type_books.PNG'>>
+
+    - Questions asked & User responds
+
+    <img src='docs/screenshots/question_answer1.PNG'>
+    <img src='docs/screenshots/question_answer2.PNG'>
+    <img src='docs/screenshots/question_answer3.PNG'>
+    <img src='docs/screenshots/question_answer4.PNG'>
+    <img src='docs/screenshots/question_answer5.PNG'>
+
+    - Invalid data message
+
+    <img src='docs/screenshots/invalid_msg.PNG'>
 
     - Feedback to user
 
-    <img src=''>
+    <img src='docs/screenshots/feedback1.PNG'>
 
-    <img src=''> 
+    <img src='docs/screenshots/feedback2.PNG'>
 
     - Good Bye message
 
-    <img src=''>
+    <img src='docs/screenshots/good_bye_msg.PNG'>
 
 4. Program Structure
 * In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in [Diagram Software and Flowchart Maker](https://www.diagrams.net/).
@@ -125,7 +135,10 @@ Testing information can be found in a separate [testing file](https://github.com
 
 1. Time counter: 
 
-The developer wanted the 5 seconds for the opening of the game to count on the terminal so that the user could see the time count. 
+The developer wanted the 5 seconds for the opening of the game to count on the terminal so that the user could see the time count.
+
+<img src='docs/screenshots/time_counter.PNG'>
+
 On the Gitpod terminal, the time counts as the developer wanted but on the heroku terminal the counter doesn't show, there is just a timeout for 5 seconds.
 
 2. Logo:
@@ -166,6 +179,7 @@ Indeed, this option was linked to the book_choice function, and would only have 
 7. [Pep8](http://pep8online.com/) was used to test and validate the code.
 8. [Youtube](https://www.youtube.com/) was used for further clarification.
 9. [Text to Ascii Art Generator](http://patorjk.com/software/taag/#p=display&f=Bloody&t=See%20you) was used to generate a styling logo name and a good bye message.
+10. Snipping Tools was used to do screenshots of the site and add into README and TESTING file.
 
 [Back to top](#introduction "Goto introduction")
 
@@ -221,7 +235,7 @@ To deploy this program to Heroku, the developer followed these steps:
 # Acknowledgements
 
 * I would like to thank my mentor, Seun and my tutor Kasia for their helpfulness, constructive advice, feedback and guidance.
-* I would like to thank my family, my friend Esther Booto, and my boyfriend Jimmy for all the support during this project.
+* I would like to thank my family, my friend Esther Booto, my fiance Jimmy and my daughter Azur for all the support during this project.
 * I would like to thank my colleagues of Code Institute and Slack Community for sharing their posts and experience.
 
 [Back to top](#introduction "Goto introduction")

@@ -40,15 +40,21 @@ The user can choose the book he wants by typing either 1 or 2.
 
 ![]()
 
-* I would like to know more about the book that I chose
+* I would like to see a feedback after my choice
 
-The user can decide to want to know more about the chosen book by typing either yes or no, by typing yes he gets a summary of the book.
+The user can see the feedback about his choice.
 
 ![]()
 
 * I would like to make another choice easily
 
 If the user makes a wrong choice, he can make another choice.
+
+![]()
+
+* I would like to see a good bye message
+
+There is a good bye message for user after he finishes the game and will propose to run the game by clicking the green button if he wants to play again. 
 
 ![]()
 
@@ -89,5 +95,7 @@ The following changes were made after their testing:
 * Correct some spelling mistakes.
 * Review some errors about calling functions.
 * Add helper functions, while loop, try and except to alert when user enters a wrong data.
+* Change the color of the Welcome message and the message about starting time.
+* Make the user choice more flexible. 
 
  [Back to top](#manual-testing-user-stories "#Goto manual testing user stories")
