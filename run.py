@@ -27,6 +27,7 @@ while True:
 
 class Data:
     """
+    Data Class
     Get player data
     use of these data throughout the book game
     """
@@ -36,15 +37,19 @@ class Data:
         self.book_choice = ''
         self.book_decision = ''
 
+    # Set player name
     def setPlayerName(self, player_name):
         self.player_name = player_name
 
+    # Set child name
     def setChildName(self, child_name):
         self.child_name = child_name
 
+    # Set book choice
     def setBookChoice(self, book_choice):
         self.book_choice = book_choice
 
+    # Set book decision
     def setBookDecision(self, book_decision):
         self.book_decision = book_decision
 
@@ -66,6 +71,8 @@ def welcome():
     print("Happy to have you here. So, let's start\n")
     time.sleep(1)
 
+# Take the input from user and call welcome function to run
+
 
 current_user.setPlayerName(input(colored("What is your name?\n",
                            'cyan', attrs=['bold'])).capitalize())
@@ -83,10 +90,12 @@ def start_game():
     print('\nPerfect!')
     time.sleep(2)
     print(f"{current_user.child_name} has to give a presentation on "
-          "an interesting book in front of parents, teachers"
-          " and the whole class.")
+          "an interesting book in front of parents, "
+          "teachers and the whole class.")
     time.sleep(0.5)
-    print("The book should be appropriate and comprehensible.\n")
+    print("The book should be appropriate and understandable "
+          "so that every child can understand, learn, enjoy, "
+          "and above all not be bored..\n")
     time.sleep(1.5)
     print(f"You should make a choice for {current_user.child_name}, be careful"
           ", make the right choice!\n")
@@ -100,9 +109,12 @@ def start_game():
                   (colored("HISTORY", "cyan", attrs=["reverse", "bold"])))
     time.sleep(1.5)
 
+# Take the input from user and call the start game function to run
+
 
 current_user.setChildName(input(colored("What is your child's name?\n",
                           'cyan', attrs=['bold'])).capitalize())
+start_game()
 
 
 def book_choice():
@@ -117,11 +129,11 @@ def book_choice():
     while user_choice not in book_choice_options:
         print(colored('\nWhich type of book will you choose?'
                       '(a, r, c or h)', 'cyan', attrs=['bold']))
-        user_choice = input('Enter a letter: ').lower()
+        user_choice = input().lower()
         current_user.setBookChoice(user_choice)
         break
     try:
-        # If user choice exists and if it's not inn book choice options
+        # If user choice exists and if it's not in book choice options
         if current_user.book_choice and current_user.book_choice not in\
                 book_choice_options:
             raise ValueError(
@@ -161,9 +173,9 @@ def validate_integer():
     user_integer_options = ['1', '2']
     user_integer = ' '
     while user_integer not in user_integer_options:
-        print(colored(f'\nWhat would you choose {current_user.player_name}'
+        print(colored(f'What would you choose {current_user.player_name}'
                       '(1 or 2)?', 'cyan', attrs=['bold']))
-        user_integer = input('Enter a number: ')
+        user_integer = input()
         current_user.setBookDecision(user_integer)
         time.sleep(1.5)
         break
@@ -215,14 +227,32 @@ def book_chosen(book_type, choice_1, choice_2):
     print(f'There are 2 choices for {book_type} {current_user.player_name}\n')
     time.sleep(2)
     print(f'Choice 1: {choice_1}\n')
-    time.sleep(1)
-    print('or\n')
-    time.sleep(1)
+    time.sleep(1.5)
     print(f'Choice 2: {choice_2}\n')
     time.sleep(1.5)
     # If user enters wrong data
     validate_integer()
     time.sleep(1)
+
+# game_over function
+
+
+def game_over():
+    """
+    If player chose wrong choice, game_over function is called
+    """
+    game_over_art = figlet_format("BAD CHOICE", font='slant')
+    colored_ascii = colored(game_over_art, 'red', attrs=['bold'])
+    print(colored_ascii)
+    time.sleep(1)
+    print("You should make another choice "
+          f"so that {current_user.child_name} can make the best presentation "
+          "to everyone")
+    print(f"{current_user.child_name} cannot make a presentation on this book"
+          ", it is absolutely not suitable\n")
+    time.sleep(1.5)
+    # Make another choice
+    make_another_choice()
 
 # Function to play again
 
@@ -284,28 +314,9 @@ def make_another_choice():
         print('▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░      ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ')
         print('░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░    ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░ ')
 
-# game_over function
+
+# Call book choice functions so that the functions
+# dependent on it can run normally
 
 
-def game_over():
-    """
-    If player chose wrong choice, game_over function is called
-    """
-    game_over_art = figlet_format("BAD CHOICE", font='slant')
-    colored_ascii = colored(game_over_art, 'red', attrs=['bold'])
-    print(colored_ascii)
-    time.sleep(1)
-    print("You should make another choice "
-          f"so that {current_user.child_name} can make the best presentation "
-          "to everyone")
-    print(f"{current_user.child_name} cannot make a presentation on this book"
-          ", it is absolutely not suitable\n")
-    time.sleep(1.5)
-    # Make another choice
-    make_another_choice()
-
-# Call start game and bookchoice functions
-
-
-start_game()
 book_choice()
