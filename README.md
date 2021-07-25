@@ -119,7 +119,7 @@ User Goals:
 4. Program Structure
 * In the Planning Stage of the project, the developer used a Flow Chart to conceptualise and bring the Book Game idea in life. Flow Chart was created in [Diagram Software and Flowchart Maker](https://www.diagrams.net/).
 
-    <img src=''>
+    <img src='docs/screenshots/flowchart.png'>
 
 ## Features to implement in the future
 
@@ -159,6 +159,8 @@ To avoid this, the developer created two helper functions (validate_integer & bo
 At the beginning, the developer had put an additional option, that of proposing to the user a summary in case they had chosen the right book. But this option was removed when the developer used the Helper functions. 
 Indeed, this option was linked to the book_choice function, and would only have had an effect if the user had chosen the right answer. The developer preferred to remove this option to avoid complicating the code.
 
+6. The result in the Gitpod terminal works perfectly as the developer wants but once in the deployed site, after several tests, there is a small bug at the end of the program.
+
 # Technologies used
 
 ## Main Languages Used
@@ -179,7 +181,8 @@ Indeed, this option was linked to the book_choice function, and would only have 
 7. [Pep8](http://pep8online.com/) was used to test and validate the code.
 8. [Youtube](https://www.youtube.com/) was used for further clarification.
 9. [Text to Ascii Art Generator](http://patorjk.com/software/taag/#p=display&f=Bloody&t=See%20you) was used to generate a styling logo name and a good bye message.
-10. Snipping Tools was used to do screenshots of the site and add into README and TESTING file.
+10. [Convertio](https://convertio.co/mp4-gif/) was used to convert MP4 to gif for testing. 
+11. Snipping Tools was used to do screenshots of the site and add into README and TESTING file.
 
 [Back to top](#introduction "Goto introduction")
 
@@ -192,7 +195,7 @@ This project was committed to Git and push to GitHub using the workspace termina
 To deploy this program to Heroku, the developer followed these steps:
 
 1. Create requirements.txt by typing Pip3 freeze > requirements.txt in the workspace terminal
-2. Log into [Heroku]()
+2. Log into [Heroku](https://id.heroku.com/login)
 3. Create new APP 
 4. Rename the APP
 5. Choose the region
@@ -203,7 +206,7 @@ To deploy this program to Heroku, the developer followed these steps:
 10. Click to add builpack and add in order: Python the node.js
 11. Select Deploy from the menu at the top
 12. Go to deployment method and then click to GitHub 
-13. Connect to [GitHub]()
+13. Connect to [GitHub](https://github.com/Georgette-Lumbe/book_game)
 14. Search and Link up our GitHub repository code to Heroku app
 15. Scroll down to manual deploy
 16. Click to Deploy branch

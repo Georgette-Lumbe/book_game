@@ -26,37 +26,37 @@
 
 Each time that user click on the green button, the program will restart
 
-![]()
+![](docs/testing/run_button.gif)
 
 * I would like to choose the type of book that I want
 
 To access the desired type of book, user can type one of the proposed letters (a, r, c or h).
 
-![]()
+![](docs/testing/choice_type.gif)
 
 * I would like to choose the book I want
 
 The user can choose the book he wants by typing either 1 or 2.
 
-![]()
+![](docs/testing/book_choice.gif)
 
 * I would like to see a feedback after my choice
 
 The user can see the feedback about his choice.
 
-![]()
+![](docs/testing/feedback.gif)
 
 * I would like to make another choice easily
 
 If the user makes a wrong choice, he can make another choice.
 
-![]()
+![](docs/testing/another_choice.gif)
 
 * I would like to see a good bye message
 
 There is a good bye message for user after he finishes the game and will propose to run the game by clicking the green button if he wants to play again. 
 
-![]()
+![](docs/testing/bye_msg.gif)
 
 [Back to top](#testing-user-stories "#Goto testing user stories")
 
