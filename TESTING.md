@@ -38,7 +38,7 @@ To access the desired type of book, user can type one of the proposed letters (a
 
 The user can choose the book he wants by typing either 1 or 2.
 
-![](docs/testing/book_choice.gif)
+![](docs/testing/book_choice_1.gif)
 
 * I would like to see a feedback after my choice
 

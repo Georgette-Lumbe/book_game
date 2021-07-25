@@ -94,13 +94,14 @@ User Goals:
 
     <img src='docs/screenshots/type_books.PNG'>>
 
-    - Questions asked & User responds
-
+    <details>
+    <summary> Questions asked & User responds </summary>
     <img src='docs/screenshots/question_answer1.PNG'>
     <img src='docs/screenshots/question_answer2.PNG'>
     <img src='docs/screenshots/question_answer3.PNG'>
     <img src='docs/screenshots/question_answer4.PNG'>
     <img src='docs/screenshots/question_answer5.PNG'>
+    </details>
 
     - Invalid data message
 
